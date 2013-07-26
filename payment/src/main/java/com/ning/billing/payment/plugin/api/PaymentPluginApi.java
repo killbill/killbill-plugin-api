@@ -146,6 +146,17 @@ public interface PaymentPluginApi {
             throws PaymentPluginApiException;
 
     /**
+     * Search payment methods
+     * <p/>
+     * The search is plugin specific, there is no constraint on how the searchKey should be interpreted.
+     *
+     * @param context call context
+     * @return payment methods matching the search key
+     */
+    public List<PaymentMethodPlugin> searchPaymentMethods(String searchKey, TenantContext context)
+            throws PaymentPluginApiException;
+
+    /**
      * This is used after Killbill decided to refresh its state from the gateway
      *
      * @param kbAccountId    killbill accountId
