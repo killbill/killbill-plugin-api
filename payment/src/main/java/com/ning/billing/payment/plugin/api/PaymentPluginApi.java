@@ -24,6 +24,7 @@ import com.ning.billing.catalog.api.Currency;
 import com.ning.billing.payment.api.PaymentMethodPlugin;
 import com.ning.billing.util.callcontext.CallContext;
 import com.ning.billing.util.callcontext.TenantContext;
+import com.ning.billing.util.entity.Pagination;
 
 public interface PaymentPluginApi {
 
@@ -151,9 +152,11 @@ public interface PaymentPluginApi {
      * The search is plugin specific, there is no constraint on how the searchKey should be interpreted.
      *
      * @param context call context
+     * @param offset  the offset of the first result
+     * @param limit   the maximum number of results to retrieve
      * @return payment methods matching the search key
      */
-    public List<PaymentMethodPlugin> searchPaymentMethods(String searchKey, TenantContext context)
+    public Pagination<PaymentMethodPlugin> searchPaymentMethods(String searchKey, Long offset, Long limit, TenantContext context)
             throws PaymentPluginApiException;
 
     /**
