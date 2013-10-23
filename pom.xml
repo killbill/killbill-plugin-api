@@ -31,6 +31,7 @@
     <modules>
         <module>notification</module>
         <module>payment</module>
+        <module>currency</module>
     </modules>
     <scm>
         <connection>scm:git:git://github.com/killbill/killbill-plugin-api.git</connection>
