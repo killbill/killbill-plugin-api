@@ -1,5 +1,6 @@
 0.5.0
     Add support for pagination in PaymentPluginApi#searchPaymentMethods
+    Update to killbill-oss-parent 0.5.0
 
 0.4.0
     Add external event type for PAUSE/RESUME (entitlememnt)
