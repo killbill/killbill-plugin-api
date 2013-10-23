@@ -6,7 +6,9 @@
         <groupId>com.ning.billing.plugin</groupId>
         <version>0.4.1-SNAPSHOT</version>
     </parent>
-    <artifactId>currency</artifactId>
+
+    <artifactId>killbill-plugin-api-currency</artifactId>
+
     <name>Kill Bill currency conversion plugin apis</name>
     <dependencies>
         <dependency>

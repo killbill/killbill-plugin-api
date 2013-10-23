@@ -16,9 +16,9 @@
 
 package com.ning.billing.currency.plugin.api;
 
+import com.ning.billing.catalog.api.Currency;
 import org.joda.time.DateTime;
 
-import java.util.Currency;
 import java.util.Set;
 import java.util.SortedSet;
 
