@@ -20,13 +20,15 @@ import org.joda.time.DateTime;
 
 import com.ning.billing.catalog.api.Currency;
 
+import java.math.BigDecimal;
+
 public interface Rate {
 
     public Currency getBaseCurrency();
 
     public Currency getCurrency();
 
-    public Double getValue();
+    public BigDecimal getValue();
 
     public DateTime getConversionDate();
 }
