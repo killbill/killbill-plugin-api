@@ -4,7 +4,7 @@
     <parent>
         <artifactId>killbill-plugin-api</artifactId>
         <groupId>com.ning.billing.plugin</groupId>
-        <version>0.5.1-SNAPSHOT</version>
+        <version>0.6.0</version>
     </parent>
 
     <artifactId>killbill-plugin-api-currency</artifactId>
