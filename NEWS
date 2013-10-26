@@ -1,3 +1,6 @@
+0.6.0
+    Add new Currency plugin apis
+
 0.5.0
     Add support for pagination in PaymentPluginApi#searchPaymentMethods
     Update to killbill-oss-parent 0.5.1
