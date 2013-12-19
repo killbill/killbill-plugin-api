@@ -57,6 +57,18 @@ public interface PaymentPluginApi {
             throws PaymentPluginApiException;
 
     /**
+     * Search payments
+     * <p/>
+     * The search is plugin specific, there is no constraint on how the searchKey should be interpreted.
+     *
+     * @param context call context
+     * @param offset  the offset of the first result
+     * @param limit   the maximum number of results to retrieve
+     * @return payments matching the search key
+     */
+    public Pagination<PaymentInfoPlugin> searchPayments(String searchKey, Long offset, Long limit, TenantContext context) throws PaymentPluginApiException;
+
+    /**
      * Process a refund against a given payment. Required.
      *
      * @param kbAccountId  killbill accountId

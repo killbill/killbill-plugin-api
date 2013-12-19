@@ -1,3 +1,7 @@
+0.6.2
+    Add PaymentPluginApi#searchPayments
+    Update to killbill-oss-parent 0.5.9
+
 0.6.1
     Currency api changes
 
