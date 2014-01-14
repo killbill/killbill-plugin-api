@@ -1,4 +1,5 @@
 0.6.3
+    Update killbill-oss-parent to 0.5.17
     Add PaymentPluginApi#searchRefunds
 
 0.6.2
