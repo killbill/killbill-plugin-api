@@ -23,7 +23,7 @@
     </parent>
     <groupId>com.ning.billing.plugin</groupId>
     <artifactId>killbill-plugin-api</artifactId>
-    <version>0.6.3-SNAPSHOT</version>
+    <version>0.6.3</version>
     <packaging>pom</packaging>
     <name>Kill Bill plugin apis</name>
     <description>Kill Bill plugin apis</description>
