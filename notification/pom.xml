@@ -18,7 +18,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <artifactId>killbill-plugin-api</artifactId>
-        <groupId>com.ning.billing.plugin</groupId>
+        <groupId>org.kill-bill.billing.plugin</groupId>
         <version>0.6.4-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
@@ -26,7 +26,7 @@
     <name>Kill Bill notification plugin apis</name>
     <dependencies>
         <dependency>
-            <groupId>com.ning.billing</groupId>
+            <groupId>org.kill-bill.billing</groupId>
             <artifactId>killbill-api</artifactId>
         </dependency>
     </dependencies>

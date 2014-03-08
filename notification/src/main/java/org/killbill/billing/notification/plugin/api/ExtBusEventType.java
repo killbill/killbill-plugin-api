@@ -14,7 +14,7 @@
  * under the License.
  */
 
-package com.ning.billing.notification.plugin.api;
+package org.killbill.billing.notification.plugin.api;
 
 /**
  * The enum {@code ExtBusEventType} represents the user visible bus event types.

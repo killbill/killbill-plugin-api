@@ -14,17 +14,17 @@
  * under the License.
  */
 
-package com.ning.billing.payment.plugin.api;
+package org.killbill.billing.payment.plugin.api;
 
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 
-import com.ning.billing.catalog.api.Currency;
-import com.ning.billing.payment.api.PaymentMethodPlugin;
-import com.ning.billing.util.callcontext.CallContext;
-import com.ning.billing.util.callcontext.TenantContext;
-import com.ning.billing.util.entity.Pagination;
+import org.killbill.billing.catalog.api.Currency;
+import org.killbill.billing.payment.api.PaymentMethodPlugin;
+import org.killbill.billing.util.callcontext.CallContext;
+import org.killbill.billing.util.callcontext.TenantContext;
+import org.killbill.billing.util.entity.Pagination;
 
 public interface PaymentPluginApi {
 

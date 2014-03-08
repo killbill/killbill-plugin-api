@@ -14,11 +14,11 @@
  * under the License.
  */
 
-package com.ning.billing.notification.plugin.api;
+package org.killbill.billing.notification.plugin.api;
 
 import java.util.UUID;
 
-import com.ning.billing.ObjectType;
+import org.killbill.billing.ObjectType;
 
 /**
  * The interface {@code ExtBusEvent} represents the event type that is published for Killbill users.

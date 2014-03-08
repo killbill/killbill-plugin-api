@@ -14,32 +14,14 @@
  * under the License.
  */
 
-package com.ning.billing.payment.plugin.api;
+package org.killbill.billing.notification.plugin.api;
 
-import java.util.UUID;
-
-/**
- * Returns the plugin view of existing payment methods
- */
-public interface PaymentMethodInfoPlugin {
+public interface NotificationPluginApi {
 
     /**
-     * @return the Killbill accountId
+     * Dispatching of external Killbill events for notification plugins
+     *
+     * @param killbillEvent the killbill event
      */
-    public UUID getAccountId();
-
-    /**
-     * @return the killbillPaymentMethodId
-     */
-    public UUID getPaymentMethodId();
-
-    /**
-     * @return default payment method set on the gateway
-     */
-    public boolean isDefault();
-
-    /**
-     * @return the external paymentMethodId on the gateway
-     */
-    public String getExternalPaymentMethodId();
+    public void onEvent(ExtBusEvent killbillEvent);
 }

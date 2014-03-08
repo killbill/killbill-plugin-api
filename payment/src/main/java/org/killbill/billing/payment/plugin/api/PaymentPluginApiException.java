@@ -14,9 +14,9 @@
  * under the License.
  */
 
-package com.ning.billing.payment.plugin.api;
+package org.killbill.billing.payment.plugin.api;
 
-import com.ning.billing.BillingExceptionBase;
+import org.killbill.billing.BillingExceptionBase;
 
 public class PaymentPluginApiException extends Exception {
 
