@@ -231,4 +231,28 @@ public interface PaymentPluginApi {
      */
     public void resetPaymentMethods(UUID kbAccountId, List<PaymentMethodInfoPlugin> paymentMethods)
             throws PaymentPluginApiException;
+
+    /**
+     * Build metadata for the client to create a redirect form
+     *
+     * @param kbAccountId      killbill accountId
+     * @param descriptorFields form fields
+     * @param context          call context
+     * @return redirect form metadata
+     */
+    public HostedPaymentPageFormDescriptor buildFormDescriptor(UUID kbAccountId, HostedPaymentPageDescriptorFields descriptorFields, TenantContext context);
+
+    /**
+     * Process a notification from the gateway
+     * <p/>
+     * This potentially does more than just deserialize the payload. The plugin may have to acknowledge it
+     * with the gateway.
+     *
+     * @param notification serialized notification object
+     * @param context      call context
+     * @return deserialized notification object
+     * @throws PaymentPluginApiException
+     */
+    public HostedPaymentPageNotification processNotification(String notification, TenantContext context)
+            throws PaymentPluginApiException;
 }

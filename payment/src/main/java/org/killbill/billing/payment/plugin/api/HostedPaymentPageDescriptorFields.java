@@ -16,16 +16,29 @@
 
 package org.killbill.billing.payment.plugin.api;
 
-/**
- * Returns a mapping between field types and the expect field name for the Integration
- */
-public interface HostedPaymentPageDescriptorFields {
+import java.util.Map;
 
-    public String getAccount();
+import org.killbill.billing.catalog.api.Currency;
+
+public interface HostedPaymentPageDescriptorFields {
 
     public String getAmount();
 
+    public Currency currency();
+
     public String getOrder();
+
+    public String getCredential2();
+
+    public String getCredential3();
+
+    public String getCredential4();
+
+    public String getTransactionType();
+
+    public String getAuthCode();
+
+    public String getAccountName();
 
     public interface Customer {
 
@@ -57,11 +70,17 @@ public interface HostedPaymentPageDescriptorFields {
 
     public String getReturnUrl();
 
+    public String getForwardUrl();
+
     public String getCancelReturnUrl();
+
+    public String getRedirectParam();
 
     public String getDescription();
 
     public String getTax();
 
     public String getShipping();
+
+    public Map<String, String> customFields();
 }

@@ -16,9 +16,14 @@
 
 package org.killbill.billing.payment.plugin.api;
 
-public interface HostedPaymentPageDescriptor {
+import java.util.Map;
 
-    public String getServiceUrl();
+public interface HostedPaymentPageFormDescriptor {
 
-    public HostedPaymentPageDescriptorFields getFields();
+    public String getFormMethod();
+
+    public String getFormUrl();
+
+    // Returns a mapping field name -> field value for the form
+    public Map<String, String> getFormFields();
 }

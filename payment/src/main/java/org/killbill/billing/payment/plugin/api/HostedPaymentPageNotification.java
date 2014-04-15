@@ -16,14 +16,20 @@
 
 package org.killbill.billing.payment.plugin.api;
 
-import org.joda.time.DateTime;
-
 import java.math.BigDecimal;
+import java.util.UUID;
+
+import org.joda.time.DateTime;
 
 /**
  * Represents a transaction notification from the remote service
  */
 public interface HostedPaymentPageNotification {
+
+    /**
+     * @return the id in Kill Bill
+     */
+    public UUID getKbPaymentId();
 
     public boolean isComplete();
 
@@ -43,11 +49,4 @@ public interface HostedPaymentPageNotification {
     public BigDecimal getGrossAmount();
 
     public String getStatus();
-
-    /**
-     * Acknowledge the transaction with the remote service
-     *
-     * @return true on success, false otherwise
-     */
-    public boolean acknowledge() throws PaymentPluginApiException;
 }
