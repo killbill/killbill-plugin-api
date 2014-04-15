@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/killbill-plugin-api.iml" filepath="$PROJECT_DIR$/killbill-plugin-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/currency/killbill-plugin-api-currency.iml" filepath="$PROJECT_DIR$/currency/killbill-plugin-api-currency.iml" />
+      <module fileurl="file://$PROJECT_DIR$/notification/killbill-plugin-api-notification.iml" filepath="$PROJECT_DIR$/notification/killbill-plugin-api-notification.iml" />
+      <module fileurl="file://$PROJECT_DIR$/payment/killbill-plugin-api-payment.iml" filepath="$PROJECT_DIR$/payment/killbill-plugin-api-payment.iml" />
+    </modules>
+  </component>
+</project>
+
