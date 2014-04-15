@@ -29,6 +29,36 @@ import org.killbill.billing.util.entity.Pagination;
 public interface PaymentPluginApi {
 
     /**
+     * Authorize a specific amount in the Gateway.
+     *
+     * @param kbAccountId       killbill accountId
+     * @param kbPaymentId       killbill payment id (for reference)
+     * @param kbPaymentMethodId killbill payment method id
+     * @param amount            amount to charge
+     * @param currency          currency
+     * @param context           call context
+     * @return information about the authorization in the gateway
+     * @throws PaymentPluginApiException
+     */
+    public PaymentInfoPlugin authorizePayment(UUID kbAccountId, UUID kbPaymentId, UUID kbPaymentMethodId, BigDecimal amount, Currency currency, CallContext context)
+            throws PaymentPluginApiException;
+
+    /**
+     * Capture a specific amount in the Gateway.
+     *
+     * @param kbAccountId       killbill accountId
+     * @param kbPaymentId       killbill payment id (for reference)
+     * @param kbPaymentMethodId killbill payment method id
+     * @param amount            amount to charge
+     * @param currency          currency
+     * @param context           call context
+     * @return information about the capture in the gateway
+     * @throws PaymentPluginApiException
+     */
+    public PaymentInfoPlugin capturePayment(UUID kbAccountId, UUID kbPaymentId, UUID kbPaymentMethodId, BigDecimal amount, Currency currency, CallContext context)
+            throws PaymentPluginApiException;
+
+    /**
      * Charge a specific amount in the Gateway. Required.
      *
      * @param kbAccountId       killbill accountId
@@ -43,6 +73,18 @@ public interface PaymentPluginApi {
     public PaymentInfoPlugin processPayment(UUID kbAccountId, UUID kbPaymentId, UUID kbPaymentMethodId, BigDecimal amount, Currency currency, CallContext context)
             throws PaymentPluginApiException;
 
+    /**
+     * Void an authorization in the Gateway.
+     *
+     * @param kbAccountId       killbill accountId
+     * @param kbPaymentId       killbill payment id (for reference)
+     * @param kbPaymentMethodId killbill payment method id
+     * @param context           call context
+     * @return information about the capture in the gateway
+     * @throws PaymentPluginApiException
+     */
+    public PaymentInfoPlugin voidPayment(UUID kbAccountId, UUID kbPaymentId, UUID kbPaymentMethodId, CallContext context)
+            throws PaymentPluginApiException;
 
     /**
      * Retrieve information about a given payment. Optional (not all gateways will support it).
@@ -81,7 +123,6 @@ public interface PaymentPluginApi {
      */
     public RefundInfoPlugin processRefund(UUID kbAccountId, UUID kbPaymentId, BigDecimal refundAmount, Currency currency, CallContext context)
             throws PaymentPluginApiException;
-
 
     /**
      * @param kbAccountId killbill account id
