@@ -1,3 +1,6 @@
+0.6.5
+    Add (active merchant) like API for payment auth/capture,...
+
 0.6.4
     Update package from com.ning -> ork.killbill
 
