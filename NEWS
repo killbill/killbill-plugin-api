@@ -1,8 +1,12 @@
+0.7.0
+    Allow custom properties to be passed to payment API calls
+    Update killbill-oss-parent to 0.7.0
+
 0.6.5
-    Add (active merchant) like API for payment auth/capture,...
+    Add (ActiveMerchant-like) APIs for direct payment (auth, capture, ...)
 
 0.6.4
-    Update package from com.ning -> ork.killbill
+    Update package from com.ning -> org.killbill
 
 0.6.3
     Update killbill-oss-parent to 0.5.17
@@ -23,7 +27,7 @@
     Update to killbill-oss-parent 0.5.1
 
 0.4.0
-    Add external event type for PAUSE/RESUME (entitlememnt)
+    Add external event type for PAUSE/RESUME (entitlement)
 
 0.3.0
     Add searchPaymentMethods in PaymentPluginApi

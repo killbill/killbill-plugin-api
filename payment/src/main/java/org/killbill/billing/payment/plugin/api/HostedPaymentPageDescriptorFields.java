@@ -16,9 +16,10 @@
 
 package org.killbill.billing.payment.plugin.api;
 
-import java.util.Map;
+import java.util.List;
 
 import org.killbill.billing.catalog.api.Currency;
+import org.killbill.billing.payment.api.PluginProperty;
 
 public interface HostedPaymentPageDescriptorFields {
 
@@ -82,5 +83,5 @@ public interface HostedPaymentPageDescriptorFields {
 
     public String getShipping();
 
-    public Map<String, String> customFields();
+    public List<PluginProperty> customFields();
 }
