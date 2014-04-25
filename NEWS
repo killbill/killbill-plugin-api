@@ -1,3 +1,7 @@
+0.7.1
+    Iteration on direct payment API
+    Update killbill-oss-parent to 0.7.5
+
 0.7.0
     Allow custom properties to be passed to payment API calls
     Update killbill-oss-parent to 0.7.0

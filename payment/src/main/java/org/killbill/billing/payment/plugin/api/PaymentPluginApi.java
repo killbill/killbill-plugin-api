@@ -116,6 +116,7 @@ public interface PaymentPluginApi {
      * @param properties custom properties for the gateway
      * @param context    call context
      * @return payments matching the search key
+     * @throws PaymentPluginApiException
      */
     public Pagination<PaymentInfoPlugin> searchPayments(String searchKey, Long offset, Long limit, Iterable<PluginProperty> properties, TenantContext context)
             throws PaymentPluginApiException;
@@ -156,6 +157,7 @@ public interface PaymentPluginApi {
      * @param properties custom properties for the gateway
      * @param context    call context
      * @return refunds matching the search key
+     * @throws PaymentPluginApiException
      */
     public Pagination<RefundInfoPlugin> searchRefunds(String searchKey, Long offset, Long limit, Iterable<PluginProperty> properties, TenantContext context)
             throws PaymentPluginApiException;
@@ -240,6 +242,7 @@ public interface PaymentPluginApi {
      * @param properties custom properties for the gateway
      * @param context    call context
      * @return payment methods matching the search key
+     * @throws PaymentPluginApiException
      */
     public Pagination<PaymentMethodPlugin> searchPaymentMethods(String searchKey, Long offset, Long limit, Iterable<PluginProperty> properties, TenantContext context)
             throws PaymentPluginApiException;
@@ -250,6 +253,7 @@ public interface PaymentPluginApi {
      * @param kbAccountId    killbill accountId
      * @param paymentMethods the list of payment methods
      * @param properties     custom properties for the gateway
+     * @throws PaymentPluginApiException
      */
     public void resetPaymentMethods(UUID kbAccountId, List<PaymentMethodInfoPlugin> paymentMethods, Iterable<PluginProperty> properties)
             throws PaymentPluginApiException;
@@ -262,8 +266,10 @@ public interface PaymentPluginApi {
      * @param properties       custom properties for the gateway
      * @param context          call context
      * @return redirect form metadata
+     * @throws PaymentPluginApiException
      */
-    public HostedPaymentPageFormDescriptor buildFormDescriptor(UUID kbAccountId, HostedPaymentPageDescriptorFields descriptorFields, Iterable<PluginProperty> properties, TenantContext context);
+    public HostedPaymentPageFormDescriptor buildFormDescriptor(UUID kbAccountId, HostedPaymentPageDescriptorFields descriptorFields, Iterable<PluginProperty> properties, TenantContext context)
+            throws PaymentPluginApiException;
 
     /**
      * Process a notification from the gateway
