@@ -261,14 +261,14 @@ public interface PaymentPluginApi {
     /**
      * Build metadata for the client to create a redirect form
      *
-     * @param kbAccountId      killbill accountId
-     * @param descriptorFields form fields
-     * @param properties       custom properties for the gateway
-     * @param context          call context
+     * @param kbAccountId  killbill accountId
+     * @param customFields form fields
+     * @param properties   custom properties for the gateway
+     * @param context      call context
      * @return redirect form metadata
      * @throws PaymentPluginApiException
      */
-    public HostedPaymentPageFormDescriptor buildFormDescriptor(UUID kbAccountId, HostedPaymentPageDescriptorFields descriptorFields, Iterable<PluginProperty> properties, TenantContext context)
+    public HostedPaymentPageFormDescriptor buildFormDescriptor(UUID kbAccountId, Iterable<PluginProperty> customFields, Iterable<PluginProperty> properties, CallContext context)
             throws PaymentPluginApiException;
 
     /**
@@ -280,9 +280,9 @@ public interface PaymentPluginApi {
      * @param notification serialized notification object
      * @param properties   custom properties for the gateway
      * @param context      call context
-     * @return deserialized notification object
+     * @return gateway notification object used to build the response to the gateway
      * @throws PaymentPluginApiException
      */
-    public HostedPaymentPageNotification processNotification(String notification, Iterable<PluginProperty> properties, TenantContext context)
+    public GatewayNotification processNotification(String notification, Iterable<PluginProperty> properties, CallContext context)
             throws PaymentPluginApiException;
 }
