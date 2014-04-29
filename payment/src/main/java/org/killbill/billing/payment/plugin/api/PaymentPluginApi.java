@@ -253,9 +253,10 @@ public interface PaymentPluginApi {
      * @param kbAccountId    killbill accountId
      * @param paymentMethods the list of payment methods
      * @param properties     custom properties for the gateway
+     * @param context        call context
      * @throws PaymentPluginApiException
      */
-    public void resetPaymentMethods(UUID kbAccountId, List<PaymentMethodInfoPlugin> paymentMethods, Iterable<PluginProperty> properties)
+    public void resetPaymentMethods(UUID kbAccountId, List<PaymentMethodInfoPlugin> paymentMethods, Iterable<PluginProperty> properties, CallContext context)
             throws PaymentPluginApiException;
 
     /**
