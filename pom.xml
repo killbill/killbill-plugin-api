@@ -45,4 +45,13 @@
         <system>Github</system>
         <url>https://github.com/killbill/killbill-plugin-api/issues</url>
     </issueManagement>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.kill-bill.billing</groupId>
+                <artifactId>killbill-api</artifactId>
+                <version>0.9.6-SNAPSHOT</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
