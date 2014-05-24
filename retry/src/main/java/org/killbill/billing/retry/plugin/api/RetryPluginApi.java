@@ -26,11 +26,11 @@ public interface RetryPluginApi {
      *
      * @return true if retry logic should be aborted
      */
-    public boolean isRetryAborted();
+    public boolean isRetryAborted(final String externalKey);
 
     /**
      *
      * @return the next date where retry should occur; null if there is no more retry
      */
-    public DateTime getNextRetryDate();
+    public DateTime getNextRetryDate(final String externalKey);
 }
