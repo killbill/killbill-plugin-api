@@ -94,6 +94,22 @@ public interface PaymentPluginApi {
             throws PaymentPluginApiException;
 
     /**
+     * Credit a specific amount in the Gateway.
+     *
+     * @param kbAccountId       killbill accountId
+     * @param kbPaymentId       killbill payment id
+     * @param kbPaymentMethodId killbill payment method id
+     * @param amount            amount to credit
+     * @param currency          currency
+     * @param properties        custom properties for the gateway
+     * @param context           call context
+     * @return information about the credit in the gateway
+     * @throws PaymentPluginApiException
+     */
+    public PaymentInfoPlugin creditPayment(UUID kbAccountId, UUID kbPaymentId, UUID kbPaymentMethodId, BigDecimal amount, Currency currency, Iterable<PluginProperty> properties, CallContext context)
+            throws PaymentPluginApiException;
+
+    /**
      * Retrieve information about a given payment. Optional (not all gateways will support it).
      *
      * @param kbAccountId killbill accountId

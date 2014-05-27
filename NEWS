@@ -1,3 +1,6 @@
+0.7.4
+    Introduce PaymentPluginApi#creditPayment (https://github.com/killbill/killbill/issues/187)
+
 0.7.3
     Add missing context in PaymentPluginApi#resetPaymentMethods
 
