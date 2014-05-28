@@ -149,7 +149,7 @@ public interface PaymentPluginApi {
      * @return information about the refund in the gateway
      * @throws PaymentPluginApiException
      */
-    public RefundInfoPlugin processRefund(UUID kbAccountId, UUID kbPaymentId, BigDecimal refundAmount, Currency currency, Iterable<PluginProperty> properties, CallContext context)
+    public PaymentInfoPlugin processRefund(UUID kbAccountId, UUID kbPaymentId, BigDecimal refundAmount, Currency currency, Iterable<PluginProperty> properties, CallContext context)
             throws PaymentPluginApiException;
 
     /**
@@ -160,7 +160,7 @@ public interface PaymentPluginApi {
      * @return information about the refunds in the gateway
      * @throws PaymentPluginApiException
      */
-    public List<RefundInfoPlugin> getRefundInfo(UUID kbAccountId, UUID kbPaymentId, Iterable<PluginProperty> properties, TenantContext context)
+    public List<PaymentInfoPlugin> getRefundInfo(UUID kbAccountId, UUID kbPaymentId, Iterable<PluginProperty> properties, TenantContext context)
             throws PaymentPluginApiException;
 
     /**
@@ -175,7 +175,7 @@ public interface PaymentPluginApi {
      * @return refunds matching the search key
      * @throws PaymentPluginApiException
      */
-    public Pagination<RefundInfoPlugin> searchRefunds(String searchKey, Long offset, Long limit, Iterable<PluginProperty> properties, TenantContext context)
+    public Pagination<PaymentInfoPlugin> searchRefunds(String searchKey, Long offset, Long limit, Iterable<PluginProperty> properties, TenantContext context)
             throws PaymentPluginApiException;
 
     /**
