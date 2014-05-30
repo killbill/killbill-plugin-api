@@ -18,20 +18,24 @@
 
 package org.killbill.billing.retry.plugin.api;
 
-import org.joda.time.DateTime;
+public class RetryPluginApiException extends Exception {
 
-public interface RetryPluginApi {
+    public RetryPluginApiException() {
+    }
 
-    /**
-     *
-     * @return true if retry logic should be aborted
-     */
-    public boolean isRetryAborted(final String externalKey) throws RetryPluginApiException;
+    public RetryPluginApiException(final String message) {
+        super(message);
+    }
 
-    /**
-     *
-     * @return the next date where retry should occur; null if there is no more retry
-     */
-    public DateTime getNextRetryDate(final String externalKey)throws RetryPluginApiException;
+    public RetryPluginApiException(final String message, final Throwable cause) {
+        super(message, cause);
+    }
 
+    public RetryPluginApiException(final Throwable cause) {
+        super(cause);
+    }
+
+    public RetryPluginApiException(final String message, final Throwable cause, final boolean enableSuppression, final boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
+    }
 }
