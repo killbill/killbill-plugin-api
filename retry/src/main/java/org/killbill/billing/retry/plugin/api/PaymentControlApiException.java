@@ -18,24 +18,24 @@
 
 package org.killbill.billing.retry.plugin.api;
 
-public class RetryPluginApiException extends Exception {
+public class PaymentControlApiException extends Exception {
 
-    public RetryPluginApiException() {
+    public PaymentControlApiException() {
     }
 
-    public RetryPluginApiException(final String message) {
+    public PaymentControlApiException(final String message) {
         super(message);
     }
 
-    public RetryPluginApiException(final String message, final Throwable cause) {
+    public PaymentControlApiException(final String message, final Throwable cause) {
         super(message, cause);
     }
 
-    public RetryPluginApiException(final Throwable cause) {
+    public PaymentControlApiException(final Throwable cause) {
         super(cause);
     }
 
-    public RetryPluginApiException(final String message, final Throwable cause, final boolean enableSuppression, final boolean writableStackTrace) {
+    public PaymentControlApiException(final String message, final Throwable cause, final boolean enableSuppression, final boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
     }
 }

@@ -18,20 +18,5 @@
 
 package org.killbill.billing.retry.plugin.api;
 
-import org.joda.time.DateTime;
-
-public interface RetryPluginApi {
-
-    /**
-     *
-     * @return true if retry logic should be aborted
-     */
-    public boolean isRetryAborted(final String externalKey) throws RetryPluginApiException;
-
-    /**
-     *
-     * @return the next date where retry should occur; null if there is no more retry
-     */
-    public DateTime getNextRetryDate(final String externalKey)throws RetryPluginApiException;
-
+public class UnknownEntryException extends PaymentControlApiException {
 }

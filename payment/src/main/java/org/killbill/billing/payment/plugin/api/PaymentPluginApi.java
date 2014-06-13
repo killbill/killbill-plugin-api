@@ -36,6 +36,7 @@ public interface PaymentPluginApi {
      *
      * @param kbAccountId       killbill accountId
      * @param kbPaymentId       killbill payment id
+     * @param kbTransactionId   killbill transaction id
      * @param kbPaymentMethodId killbill payment method id
      * @param amount            amount to charge
      * @param currency          currency
@@ -44,7 +45,7 @@ public interface PaymentPluginApi {
      * @return information about the authorization in the gateway
      * @throws PaymentPluginApiException
      */
-    public PaymentInfoPlugin authorizePayment(UUID kbAccountId, UUID kbPaymentId, UUID kbPaymentMethodId, BigDecimal amount, Currency currency, Iterable<PluginProperty> properties, CallContext context)
+    public PaymentTransactionInfoPlugin authorizePayment(UUID kbAccountId, UUID kbPaymentId, UUID kbTransactionId, UUID kbPaymentMethodId, BigDecimal amount, Currency currency, Iterable<PluginProperty> properties, CallContext context)
             throws PaymentPluginApiException;
 
     /**
@@ -52,6 +53,7 @@ public interface PaymentPluginApi {
      *
      * @param kbAccountId       killbill accountId
      * @param kbPaymentId       killbill payment id (for reference)
+     * @param kbTransactionId   killbill transaction id
      * @param kbPaymentMethodId killbill payment method id
      * @param amount            amount to charge
      * @param currency          currency
@@ -60,7 +62,7 @@ public interface PaymentPluginApi {
      * @return information about the capture in the gateway
      * @throws PaymentPluginApiException
      */
-    public PaymentInfoPlugin capturePayment(UUID kbAccountId, UUID kbPaymentId, UUID kbPaymentMethodId, BigDecimal amount, Currency currency, Iterable<PluginProperty> properties, CallContext context)
+    public PaymentTransactionInfoPlugin capturePayment(UUID kbAccountId, UUID kbPaymentId, UUID kbTransactionId, UUID kbPaymentMethodId, BigDecimal amount, Currency currency, Iterable<PluginProperty> properties, CallContext context)
             throws PaymentPluginApiException;
 
     /**
@@ -68,6 +70,7 @@ public interface PaymentPluginApi {
      *
      * @param kbAccountId       killbill accountId
      * @param kbPaymentId       killbill payment id (for reference)
+     * @param kbTransactionId   killbill transaction id
      * @param kbPaymentMethodId killbill payment method id
      * @param amount            amount to charge
      * @param currency          currency
@@ -76,7 +79,7 @@ public interface PaymentPluginApi {
      * @return information about the payment in the gateway
      * @throws PaymentPluginApiException
      */
-    public PaymentInfoPlugin processPayment(UUID kbAccountId, UUID kbPaymentId, UUID kbPaymentMethodId, BigDecimal amount, Currency currency, Iterable<PluginProperty> properties, CallContext context)
+    public PaymentTransactionInfoPlugin processPayment(UUID kbAccountId, UUID kbPaymentId, UUID kbTransactionId, UUID kbPaymentMethodId, BigDecimal amount, Currency currency, Iterable<PluginProperty> properties, CallContext context)
             throws PaymentPluginApiException;
 
     /**
@@ -84,13 +87,14 @@ public interface PaymentPluginApi {
      *
      * @param kbAccountId       killbill accountId
      * @param kbPaymentId       killbill payment id (for reference)
+     * @param kbTransactionId   killbill transaction id
      * @param kbPaymentMethodId killbill payment method id
      * @param properties        custom properties for the gateway
      * @param context           call context
      * @return information about the capture in the gateway
      * @throws PaymentPluginApiException
      */
-    public PaymentInfoPlugin voidPayment(UUID kbAccountId, UUID kbPaymentId, UUID kbPaymentMethodId, Iterable<PluginProperty> properties, CallContext context)
+    public PaymentTransactionInfoPlugin voidPayment(UUID kbAccountId, UUID kbPaymentId, UUID kbTransactionId, UUID kbPaymentMethodId, Iterable<PluginProperty> properties, CallContext context)
             throws PaymentPluginApiException;
 
     /**
@@ -98,6 +102,7 @@ public interface PaymentPluginApi {
      *
      * @param kbAccountId       killbill accountId
      * @param kbPaymentId       killbill payment id
+     * @param kbTransactionId   killbill transaction id
      * @param kbPaymentMethodId killbill payment method id
      * @param amount            amount to credit
      * @param currency          currency
@@ -106,7 +111,7 @@ public interface PaymentPluginApi {
      * @return information about the credit in the gateway
      * @throws PaymentPluginApiException
      */
-    public PaymentInfoPlugin creditPayment(UUID kbAccountId, UUID kbPaymentId, UUID kbPaymentMethodId, BigDecimal amount, Currency currency, Iterable<PluginProperty> properties, CallContext context)
+    public PaymentTransactionInfoPlugin creditPayment(UUID kbAccountId, UUID kbPaymentId, UUID kbTransactionId, UUID kbPaymentMethodId, BigDecimal amount, Currency currency, Iterable<PluginProperty> properties, CallContext context)
             throws PaymentPluginApiException;
 
     /**
@@ -119,7 +124,7 @@ public interface PaymentPluginApi {
      * @return information about the payment in the gateway
      * @throws PaymentPluginApiException
      */
-    public PaymentInfoPlugin getPaymentInfo(UUID kbAccountId, UUID kbPaymentId, Iterable<PluginProperty> properties, TenantContext context)
+    public List<PaymentTransactionInfoPlugin> getPaymentInfo(UUID kbAccountId, UUID kbPaymentId, Iterable<PluginProperty> properties, TenantContext context)
             throws PaymentPluginApiException;
 
     /**
@@ -134,7 +139,7 @@ public interface PaymentPluginApi {
      * @return payments matching the search key
      * @throws PaymentPluginApiException
      */
-    public Pagination<PaymentInfoPlugin> searchPayments(String searchKey, Long offset, Long limit, Iterable<PluginProperty> properties, TenantContext context)
+    public Pagination<PaymentTransactionInfoPlugin> searchPayments(String searchKey, Long offset, Long limit, Iterable<PluginProperty> properties, TenantContext context)
             throws PaymentPluginApiException;
 
     /**
@@ -142,6 +147,7 @@ public interface PaymentPluginApi {
      *
      * @param kbAccountId  killbill accountId
      * @param kbPaymentId  killbill payment id (for reference)
+     * @param kbTransactionId   killbill transaction id
      * @param refundAmount refund amount
      * @param currency     currency
      * @param properties   custom properties for the gateway
@@ -149,34 +155,9 @@ public interface PaymentPluginApi {
      * @return information about the refund in the gateway
      * @throws PaymentPluginApiException
      */
-    public PaymentInfoPlugin processRefund(UUID kbAccountId, UUID kbPaymentId, BigDecimal refundAmount, Currency currency, Iterable<PluginProperty> properties, CallContext context)
+    public PaymentTransactionInfoPlugin processRefund(UUID kbAccountId, UUID kbPaymentId, UUID kbTransactionId, BigDecimal refundAmount, Currency currency, Iterable<PluginProperty> properties, CallContext context)
             throws PaymentPluginApiException;
 
-    /**
-     * @param kbAccountId killbill account id
-     * @param kbPaymentId killbill payment id
-     * @param properties  custom properties for the gateway
-     * @param context     call context
-     * @return information about the refunds in the gateway
-     * @throws PaymentPluginApiException
-     */
-    public List<PaymentInfoPlugin> getRefundInfo(UUID kbAccountId, UUID kbPaymentId, Iterable<PluginProperty> properties, TenantContext context)
-            throws PaymentPluginApiException;
-
-    /**
-     * Search refunds
-     * <p/>
-     * The search is plugin specific, there is no constraint on how the searchKey should be interpreted.
-     *
-     * @param offset     the offset of the first result
-     * @param limit      the maximum number of results to retrieve
-     * @param properties custom properties for the gateway
-     * @param context    call context
-     * @return refunds matching the search key
-     * @throws PaymentPluginApiException
-     */
-    public Pagination<PaymentInfoPlugin> searchRefunds(String searchKey, Long offset, Long limit, Iterable<PluginProperty> properties, TenantContext context)
-            throws PaymentPluginApiException;
 
     /**
      * Add a payment method for a Killbill account in the gateway. Optional.
