@@ -23,6 +23,7 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="killbill-plugin-api-currency" />
+        <module name="killbill-plugin-api-invoice" />
         <module name="killbill-plugin-api-notification" />
         <module name="killbill-plugin-api-payment" />
         <module name="killbill-plugin-api-retry" />
@@ -31,6 +32,7 @@
     <bytecodeTargetLevel>
       <module name="killbill-plugin-api" target="1.6" />
       <module name="killbill-plugin-api-currency" target="1.6" />
+      <module name="killbill-plugin-api-invoice" target="1.6" />
       <module name="killbill-plugin-api-notification" target="1.6" />
       <module name="killbill-plugin-api-payment" target="1.6" />
       <module name="killbill-plugin-api-retry" target="1.6" />

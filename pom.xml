@@ -35,6 +35,7 @@
         <module>payment</module>
         <module>currency</module>
         <module>retry</module>
+        <module>invoice</module>
     </modules>
     <scm>
         <connection>scm:git:git://github.com/killbill/killbill-plugin-api.git</connection>
