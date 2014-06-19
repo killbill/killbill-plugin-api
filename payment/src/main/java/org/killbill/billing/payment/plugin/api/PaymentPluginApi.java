@@ -52,7 +52,7 @@ public interface PaymentPluginApi {
      * Capture a specific amount in the Gateway.
      *
      * @param kbAccountId       killbill accountId
-     * @param kbPaymentId       killbill payment id (for reference)
+     * @param kbPaymentId       killbill payment id
      * @param kbTransactionId   killbill transaction id
      * @param kbPaymentMethodId killbill payment method id
      * @param amount            amount to charge
@@ -66,10 +66,10 @@ public interface PaymentPluginApi {
             throws PaymentPluginApiException;
 
     /**
-     * Charge a specific amount in the Gateway. Required.
+     * Charge a specific amount in the Gateway.
      *
      * @param kbAccountId       killbill accountId
-     * @param kbPaymentId       killbill payment id (for reference)
+     * @param kbPaymentId       killbill payment id
      * @param kbTransactionId   killbill transaction id
      * @param kbPaymentMethodId killbill payment method id
      * @param amount            amount to charge
@@ -79,14 +79,14 @@ public interface PaymentPluginApi {
      * @return information about the payment in the gateway
      * @throws PaymentPluginApiException
      */
-    public PaymentTransactionInfoPlugin processPayment(UUID kbAccountId, UUID kbPaymentId, UUID kbTransactionId, UUID kbPaymentMethodId, BigDecimal amount, Currency currency, Iterable<PluginProperty> properties, CallContext context)
+    public PaymentTransactionInfoPlugin purchasePayment(UUID kbAccountId, UUID kbPaymentId, UUID kbTransactionId, UUID kbPaymentMethodId, BigDecimal amount, Currency currency, Iterable<PluginProperty> properties, CallContext context)
             throws PaymentPluginApiException;
 
     /**
      * Void an authorization in the Gateway.
      *
      * @param kbAccountId       killbill accountId
-     * @param kbPaymentId       killbill payment id (for reference)
+     * @param kbPaymentId       killbill payment id
      * @param kbTransactionId   killbill transaction id
      * @param kbPaymentMethodId killbill payment method id
      * @param properties        custom properties for the gateway
@@ -115,10 +115,27 @@ public interface PaymentPluginApi {
             throws PaymentPluginApiException;
 
     /**
-     * Retrieve information about a given payment. Optional (not all gateways will support it).
+     * Process a refund against a given payment.
+     *
+     * @param kbAccountId       killbill accountId
+     * @param kbPaymentId       killbill payment id
+     * @param kbTransactionId   killbill transaction id
+     * @param kbPaymentMethodId killbill payment method id
+     * @param amount            refund amount
+     * @param currency          currency
+     * @param properties        custom properties for the gateway
+     * @param context           call context
+     * @return information about the refund in the gateway
+     * @throws PaymentPluginApiException
+     */
+    public PaymentTransactionInfoPlugin refundPayment(UUID kbAccountId, UUID kbPaymentId, UUID kbTransactionId, UUID kbPaymentMethodId, BigDecimal amount, Currency currency, Iterable<PluginProperty> properties, CallContext context)
+            throws PaymentPluginApiException;
+
+    /**
+     * Retrieve information about a given payment.
      *
      * @param kbAccountId killbill accountId
-     * @param kbPaymentId killbill payment id (for reference)
+     * @param kbPaymentId killbill payment id
      * @param properties  custom properties for the gateway
      * @param context     call context
      * @return information about the payment in the gateway
@@ -128,7 +145,7 @@ public interface PaymentPluginApi {
             throws PaymentPluginApiException;
 
     /**
-     * Search payments
+     * Search payments.
      * <p/>
      * The search is plugin specific, there is no constraint on how the searchKey should be interpreted.
      *
@@ -143,24 +160,7 @@ public interface PaymentPluginApi {
             throws PaymentPluginApiException;
 
     /**
-     * Process a refund against a given payment. Required.
-     *
-     * @param kbAccountId  killbill accountId
-     * @param kbPaymentId  killbill payment id (for reference)
-     * @param kbTransactionId   killbill transaction id
-     * @param refundAmount refund amount
-     * @param currency     currency
-     * @param properties   custom properties for the gateway
-     * @param context      call context
-     * @return information about the refund in the gateway
-     * @throws PaymentPluginApiException
-     */
-    public PaymentTransactionInfoPlugin processRefund(UUID kbAccountId, UUID kbPaymentId, UUID kbTransactionId, BigDecimal refundAmount, Currency currency, Iterable<PluginProperty> properties, CallContext context)
-            throws PaymentPluginApiException;
-
-
-    /**
-     * Add a payment method for a Killbill account in the gateway. Optional.
+     * Add a payment method for a Killbill account in the gateway.
      * <p/>
      * Note: the payment method doesn't exist yet in Killbill when receiving the call in
      * the plugin (kbPaymentMethodId is a placeholder).
@@ -176,7 +176,7 @@ public interface PaymentPluginApi {
             throws PaymentPluginApiException;
 
     /**
-     * Delete a payment method in the gateway. Optional.
+     * Delete a payment method in the gateway.
      *
      * @param kbAccountId       killbill accountId
      * @param kbPaymentMethodId killbill payment method id
@@ -188,7 +188,7 @@ public interface PaymentPluginApi {
             throws PaymentPluginApiException;
 
     /**
-     * Get payment method details for a given payment method. Optional.
+     * Get payment method details for a given payment method.
      *
      * @param kbAccountId       killbill account id
      * @param kbPaymentMethodId killbill payment method id
@@ -201,7 +201,7 @@ public interface PaymentPluginApi {
             throws PaymentPluginApiException;
 
     /**
-     * Set a payment method as default in the gateway. Optional.
+     * Set a payment method as default in the gateway.
      *
      * @param kbAccountId       killbill accountId
      * @param kbPaymentMethodId killbill payment method id
@@ -217,10 +217,10 @@ public interface PaymentPluginApi {
      * existing payment method on the gateway.
      * <p/>
      * Sometimes payment methods have to be added directly to the gateway for PCI compliance issues
-     * and so Killbill needs to refresh its state.
+     * and so Kill Bill needs to refresh its state.
      *
      * @param kbAccountId        killbill accountId
-     * @param refreshFromGateway fetch the list of existing  payment methods from gateway-- if supported
+     * @param refreshFromGateway fetch the list of existing  payment methods from gateway -- if supported
      * @param properties         custom properties for the gateway
      * @param context            call context
      * @return all payment methods for that account
