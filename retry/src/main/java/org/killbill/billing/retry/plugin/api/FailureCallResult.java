@@ -1,5 +1,4 @@
 /*
- * Copyright 2010-2013 Ning, Inc.
  * Copyright 2014 Groupon, Inc
  * Copyright 2014 The Billing Project, LLC
  *
@@ -18,5 +17,12 @@
 
 package org.killbill.billing.retry.plugin.api;
 
-public class UnknownEntryException extends PaymentControlApiException {
+import org.joda.time.DateTime;
+
+public interface FailureCallResult {
+
+    /**
+     * @return the date the call should be retried or null if there should be no retry
+     */
+    public DateTime getNextRetryDate();
 }

@@ -17,11 +17,17 @@
 
 package org.killbill.billing.retry.plugin.api;
 
-public interface PaymentControlPluginApi {
+import java.math.BigDecimal;
 
-    public PriorPaymentControlResult priorCall(PaymentControlContext context) throws PaymentControlApiException;
+public interface PriorPaymentControlResult {
 
-    public void onSuccessCall(PaymentControlContext context) throws PaymentControlApiException;
+    /**
+     * @return true if call should not proceed
+     */
+    public boolean isAborted();
 
-    public FailureCallResult onFailureCall(PaymentControlContext context) throws PaymentControlApiException;
+    /**
+     * @return the new amount that should be used for that attempt
+     */
+    public BigDecimal getAdjustedAmount();
 }
