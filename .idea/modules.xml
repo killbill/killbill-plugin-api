@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/killbill-plugin-api.iml" filepath="$PROJECT_DIR$/killbill-plugin-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/currency/killbill-plugin-api-currency.iml" filepath="$PROJECT_DIR$/currency/killbill-plugin-api-currency.iml" />
       <module fileurl="file://$PROJECT_DIR$/invoice/killbill-plugin-api-invoice.iml" filepath="$PROJECT_DIR$/invoice/killbill-plugin-api-invoice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/invoice/killbill-plugin-api-invoice.iml" filepath="$PROJECT_DIR$/invoice/killbill-plugin-api-invoice.iml" />
       <module fileurl="file://$PROJECT_DIR$/notification/killbill-plugin-api-notification.iml" filepath="$PROJECT_DIR$/notification/killbill-plugin-api-notification.iml" />
       <module fileurl="file://$PROJECT_DIR$/payment/killbill-plugin-api-payment.iml" filepath="$PROJECT_DIR$/payment/killbill-plugin-api-payment.iml" />
       <module fileurl="file://$PROJECT_DIR$/retry/killbill-plugin-api-retry.iml" filepath="$PROJECT_DIR$/retry/killbill-plugin-api-retry.iml" />

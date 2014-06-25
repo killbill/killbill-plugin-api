@@ -29,7 +29,11 @@ public interface PaymentControlContext extends CallContext {
 
     public UUID getAccountId();
 
+    public UUID getPaymentId();
+
     public String getPaymentExternalKey();
+
+    public UUID getTransactionId();
 
     public String getTransactionExternalKey();
 
@@ -40,8 +44,6 @@ public interface PaymentControlContext extends CallContext {
     public Currency getCurrency();
 
     public UUID getPaymentMethodId();
-
-    public UUID getPaymentId();
 
     public BigDecimal getProcessedAmount();
 
