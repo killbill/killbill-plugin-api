@@ -31,6 +31,8 @@ public interface PaymentControlContext extends CallContext {
 
     public UUID getPaymentId();
 
+    public UUID getAttemptPaymentId();
+
     public String getPaymentExternalKey();
 
     public UUID getTransactionId();

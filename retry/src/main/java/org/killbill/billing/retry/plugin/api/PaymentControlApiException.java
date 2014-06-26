@@ -34,8 +34,4 @@ public class PaymentControlApiException extends Exception {
     public PaymentControlApiException(final Throwable cause) {
         super(cause);
     }
-
-    public PaymentControlApiException(final String message, final Throwable cause, final boolean enableSuppression, final boolean writableStackTrace) {
-        super(message, cause, enableSuppression, writableStackTrace);
-    }
 }
