@@ -45,6 +45,5 @@ public interface ExtBusEvent {
      */
     public UUID getAccountId();
 
-
     public UUID getTenantId();
 }

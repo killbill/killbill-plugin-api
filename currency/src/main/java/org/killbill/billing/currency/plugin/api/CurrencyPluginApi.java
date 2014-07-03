@@ -16,12 +16,12 @@
 
 package org.killbill.billing.currency.plugin.api;
 
-import org.killbill.billing.catalog.api.Currency;
-import org.killbill.billing.currency.api.Rate;
-import org.joda.time.DateTime;
-
 import java.util.Set;
 import java.util.SortedSet;
+
+import org.joda.time.DateTime;
+import org.killbill.billing.catalog.api.Currency;
+import org.killbill.billing.currency.api.Rate;
 
 public interface CurrencyPluginApi {
 

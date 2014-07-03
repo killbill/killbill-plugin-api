@@ -28,6 +28,7 @@ public interface InvoicePluginApi {
 
     /**
      * Returns additional invoice items (setup fees, VAT tax, etc) to be added to the invoice upon creation
+     *
      * @param invoice the invoice that is being created
      * @param context the call context
      * @return the list of additional invoice items to add to the new invoice
