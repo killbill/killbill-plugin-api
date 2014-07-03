@@ -21,7 +21,7 @@
     <parent>
         <artifactId>killbill-plugin-api</artifactId>
         <groupId>org.kill-bill.billing.plugin</groupId>
-        <version>0.7.4-SNAPSHOT</version>
+        <version>0.7.4</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>killbill-plugin-api-notification</artifactId>
