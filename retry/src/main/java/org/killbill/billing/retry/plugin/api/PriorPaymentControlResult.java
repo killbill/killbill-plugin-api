@@ -18,6 +18,9 @@
 package org.killbill.billing.retry.plugin.api;
 
 import java.math.BigDecimal;
+import java.util.UUID;
+
+import org.killbill.billing.catalog.api.Currency;
 
 public interface PriorPaymentControlResult {
 
@@ -30,4 +33,14 @@ public interface PriorPaymentControlResult {
      * @return the new amount that should be used for that attempt
      */
     public BigDecimal getAdjustedAmount();
+
+    /**
+     * @return the new currency that should be used for that attempt
+     */
+    public Currency getAdjustedCurrency();
+
+    /**
+     * @return the new payment method id that should be used for that attempt
+     */
+    public UUID getAdjustedPaymentMethodId();
 }
