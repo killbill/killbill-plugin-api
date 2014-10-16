@@ -17,11 +17,13 @@
 
 package org.killbill.billing.retry.plugin.api;
 
+import org.killbill.billing.payment.api.PluginProperty;
+
 public interface PaymentControlPluginApi {
 
-    public PriorPaymentControlResult priorCall(PaymentControlContext context) throws PaymentControlApiException;
+    public PriorPaymentControlResult priorCall(PaymentControlContext context, Iterable<PluginProperty> properties) throws PaymentControlApiException;
 
-    public void onSuccessCall(PaymentControlContext context) throws PaymentControlApiException;
+    public void onSuccessCall(PaymentControlContext context, Iterable<PluginProperty> properties) throws PaymentControlApiException;
 
-    public FailureCallResult onFailureCall(PaymentControlContext context) throws PaymentControlApiException;
+    public FailureCallResult onFailureCall(PaymentControlContext context, Iterable<PluginProperty> properties) throws PaymentControlApiException;
 }
