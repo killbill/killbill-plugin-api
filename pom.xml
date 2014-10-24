@@ -34,7 +34,7 @@
         <module>notification</module>
         <module>payment</module>
         <module>currency</module>
-        <module>retry</module>
+        <module>routing</module>
         <module>invoice</module>
     </modules>
     <scm>

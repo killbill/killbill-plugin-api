@@ -1,4 +1,5 @@
 /*
+ * Copyright 2010-2013 Ning, Inc.
  * Copyright 2014 Groupon, Inc
  * Copyright 2014 The Billing Project, LLC
  *
@@ -15,32 +16,22 @@
  * under the License.
  */
 
-package org.killbill.billing.retry.plugin.api;
+package org.killbill.billing.routing.plugin.api;
 
-import java.math.BigDecimal;
-import java.util.UUID;
+public class PaymentRoutingApiException extends Exception {
 
-import org.killbill.billing.catalog.api.Currency;
+    public PaymentRoutingApiException() {
+    }
 
-public interface PriorPaymentControlResult {
+    public PaymentRoutingApiException(final String message) {
+        super(message);
+    }
 
-    /**
-     * @return true if call should not proceed
-     */
-    public boolean isAborted();
+    public PaymentRoutingApiException(final String message, final Throwable cause) {
+        super(message, cause);
+    }
 
-    /**
-     * @return the new amount that should be used for that attempt
-     */
-    public BigDecimal getAdjustedAmount();
-
-    /**
-     * @return the new currency that should be used for that attempt
-     */
-    public Currency getAdjustedCurrency();
-
-    /**
-     * @return the new payment method id that should be used for that attempt
-     */
-    public UUID getAdjustedPaymentMethodId();
+    public PaymentRoutingApiException(final Throwable cause) {
+        super(cause);
+    }
 }

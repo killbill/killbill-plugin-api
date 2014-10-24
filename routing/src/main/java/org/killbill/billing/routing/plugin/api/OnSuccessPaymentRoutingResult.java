@@ -16,22 +16,8 @@
  * under the License.
  */
 
-package org.killbill.billing.retry.plugin.api;
+package org.killbill.billing.routing.plugin.api;
 
-public class PaymentControlApiException extends Exception {
-
-    public PaymentControlApiException() {
-    }
-
-    public PaymentControlApiException(final String message) {
-        super(message);
-    }
-
-    public PaymentControlApiException(final String message, final Throwable cause) {
-        super(message, cause);
-    }
-
-    public PaymentControlApiException(final Throwable cause) {
-        super(cause);
-    }
+public interface OnSuccessPaymentRoutingResult {
+    // TBD
 }

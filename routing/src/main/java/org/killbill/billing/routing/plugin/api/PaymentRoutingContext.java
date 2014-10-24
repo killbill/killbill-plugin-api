@@ -15,7 +15,7 @@
  * under the License.
  */
 
-package org.killbill.billing.retry.plugin.api;
+package org.killbill.billing.routing.plugin.api;
 
 import java.math.BigDecimal;
 import java.util.UUID;
@@ -25,7 +25,7 @@ import org.killbill.billing.payment.api.PluginProperty;
 import org.killbill.billing.payment.api.TransactionType;
 import org.killbill.billing.util.callcontext.CallContext;
 
-public interface PaymentControlContext extends CallContext {
+public interface PaymentRoutingContext extends CallContext {
 
     public UUID getAccountId();
 

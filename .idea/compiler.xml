@@ -27,6 +27,7 @@
         <module name="killbill-plugin-api-notification" />
         <module name="killbill-plugin-api-payment" />
         <module name="killbill-plugin-api-retry" />
+        <module name="killbill-plugin-api-routing" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -36,6 +37,7 @@
       <module name="killbill-plugin-api-notification" target="1.6" />
       <module name="killbill-plugin-api-payment" target="1.6" />
       <module name="killbill-plugin-api-retry" target="1.6" />
+      <module name="killbill-plugin-api-routing" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>

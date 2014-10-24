@@ -15,15 +15,18 @@
  * under the License.
  */
 
-package org.killbill.billing.retry.plugin.api;
+package org.killbill.billing.routing.plugin.api;
 
 import org.killbill.billing.payment.api.PluginProperty;
 
-public interface PaymentControlPluginApi {
+//
+// !!!  USE WITH CAUTION: API IS STILL UNDER DEFINITION AND NOT VERY STABLE !!!
+//
+public interface PaymentRoutingPluginApi {
 
-    public PriorPaymentControlResult priorCall(PaymentControlContext context, Iterable<PluginProperty> properties) throws PaymentControlApiException;
+    public PriorPaymentRoutingResult priorCall(PaymentRoutingContext context, Iterable<PluginProperty> properties) throws PaymentRoutingApiException;
 
-    public void onSuccessCall(PaymentControlContext context, Iterable<PluginProperty> properties) throws PaymentControlApiException;
+    public OnSuccessPaymentRoutingResult onSuccessCall(PaymentRoutingContext context, Iterable<PluginProperty> properties) throws PaymentRoutingApiException;
 
-    public FailureCallResult onFailureCall(PaymentControlContext context, Iterable<PluginProperty> properties) throws PaymentControlApiException;
+    public OnFailurePaymentRoutingResult onFailureCall(PaymentRoutingContext context, Iterable<PluginProperty> properties) throws PaymentRoutingApiException;
 }

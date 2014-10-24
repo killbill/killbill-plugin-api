@@ -7,7 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/invoice/killbill-plugin-api-invoice.iml" filepath="$PROJECT_DIR$/invoice/killbill-plugin-api-invoice.iml" />
       <module fileurl="file://$PROJECT_DIR$/notification/killbill-plugin-api-notification.iml" filepath="$PROJECT_DIR$/notification/killbill-plugin-api-notification.iml" />
       <module fileurl="file://$PROJECT_DIR$/payment/killbill-plugin-api-payment.iml" filepath="$PROJECT_DIR$/payment/killbill-plugin-api-payment.iml" />
-      <module fileurl="file://$PROJECT_DIR$/retry/killbill-plugin-api-retry.iml" filepath="$PROJECT_DIR$/retry/killbill-plugin-api-retry.iml" />
+      <module fileurl="file://$PROJECT_DIR$/routing/killbill-plugin-api-routing.iml" filepath="$PROJECT_DIR$/routing/killbill-plugin-api-routing.iml" />
     </modules>
   </component>
 </project>

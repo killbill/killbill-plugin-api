@@ -24,8 +24,8 @@
         <version>0.8.2-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <artifactId>killbill-plugin-api-retry</artifactId>
-    <name>Kill Bill retry plugin apis</name>
+    <artifactId>killbill-plugin-api-routing</artifactId>
+    <name>Kill Bill payment routing plugin apis</name>
     <dependencies>
         <dependency>
             <groupId>joda-time</groupId>

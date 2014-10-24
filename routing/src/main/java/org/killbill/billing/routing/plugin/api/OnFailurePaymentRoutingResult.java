@@ -15,11 +15,11 @@
  * under the License.
  */
 
-package org.killbill.billing.retry.plugin.api;
+package org.killbill.billing.routing.plugin.api;
 
 import org.joda.time.DateTime;
 
-public interface FailureCallResult {
+public interface OnFailurePaymentRoutingResult {
 
     /**
      * @return the date the call should be retried or null if there should be no retry
