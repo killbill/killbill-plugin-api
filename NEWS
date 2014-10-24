@@ -1,3 +1,6 @@
+0.8.2
+    Rename module/package/api retry -> routing
+
 0.8.1
     Add plugin properties for PaymentControlPluginApi
 
