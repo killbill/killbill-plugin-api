@@ -41,7 +41,15 @@ public interface ExtBusEvent {
     public UUID getObjectId();
 
     /**
-     * @return the unique id for the account associated woth that object
+     *
+     * @return an additional field, specific to the event type:
+     * - TENANT_CONFIG_CHANGE, TENANT_CONFIG_DELETION : the per tenant key.
+     * - Other events: null
+     */
+    public String getMetaData();
+
+    /**
+     * @return the unique id for the account associated with that object
      */
     public UUID getAccountId();
 
