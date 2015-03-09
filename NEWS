@@ -1,3 +1,6 @@
+0.8.4
+    Revert plugin interface to allow for all plugin types to receive events
+
 0.8.3
     Add new plugin interface to allow for all plugin types to receive events
     Add new ExtBusEventType TENANT_CONFIG_CHANGE, TENANT_CONFIG_DELETION and new metaData field
