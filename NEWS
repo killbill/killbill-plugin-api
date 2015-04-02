@@ -1,3 +1,6 @@
+0.8.5
+    Add new event type for INVOICE_NOTIFICATION
+
 0.8.4
     Revert plugin interface to allow for all plugin types to receive events
 
