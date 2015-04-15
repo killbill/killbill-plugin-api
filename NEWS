@@ -1,3 +1,7 @@
+0.9
+    Initial release for Kill Bill 0.14.x
+    Update killbill-oss-parent to 0.11
+
 0.8.5
     Add new event type for INVOICE_NOTIFICATION
 
