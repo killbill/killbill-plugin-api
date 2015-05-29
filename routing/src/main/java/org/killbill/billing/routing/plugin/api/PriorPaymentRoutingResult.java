@@ -1,6 +1,6 @@
 /*
- * Copyright 2014 Groupon, Inc
- * Copyright 2014 The Billing Project, LLC
+ * Copyright 2014-2015 Groupon, Inc
+ * Copyright 2014-2015 The Billing Project, LLC
  *
  * The Billing Project licenses this file to you under the Apache License, version 2.0
  * (the "License"); you may not use this file except in compliance with the
@@ -21,6 +21,7 @@ import java.math.BigDecimal;
 import java.util.UUID;
 
 import org.killbill.billing.catalog.api.Currency;
+import org.killbill.billing.payment.api.PluginProperty;
 
 public interface PriorPaymentRoutingResult {
 
@@ -43,4 +44,9 @@ public interface PriorPaymentRoutingResult {
      * @return the new payment method id that should be used for that attempt
      */
     public UUID getAdjustedPaymentMethodId();
+
+    /**
+     * @return the new plugin properties that should be used for that attempt
+     */
+    public Iterable<PluginProperty> getAdjustedPluginProperties();
 }
