@@ -1,3 +1,6 @@
+0.10
+    routing: allow control plugins to override plugin properties
+
 0.9
     Initial release for Kill Bill 0.14.x
     Update killbill-oss-parent to 0.11
