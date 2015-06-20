@@ -15,9 +15,8 @@
  * under the License.
  */
 
-package org.killbill.billing.invoice.plugin.api;
+package org.killbill.billing.catalog.plugin.api;
 
-import org.killbill.billing.catalog.plugin.api.VersionedPluginCatalog;
 import org.killbill.billing.payment.api.PluginProperty;
 import org.killbill.billing.util.callcontext.TenantContext;
 
