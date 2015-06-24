@@ -1,3 +1,6 @@
+0.11
+    Add support for catalog plugin api
+
 0.10
     routing: allow control plugins to override plugin properties
 
