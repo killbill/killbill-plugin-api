@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/killbill-plugin-api.iml" filepath="$PROJECT_DIR$/killbill-plugin-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/catalog/killbill-plugin-api-catalog.iml" filepath="$PROJECT_DIR$/catalog/killbill-plugin-api-catalog.iml" />
       <module fileurl="file://$PROJECT_DIR$/currency/killbill-plugin-api-currency.iml" filepath="$PROJECT_DIR$/currency/killbill-plugin-api-currency.iml" />
+      <module fileurl="file://$PROJECT_DIR$/entitlement/killbill-plugin-api-entitlement.iml" filepath="$PROJECT_DIR$/entitlement/killbill-plugin-api-entitlement.iml" />
       <module fileurl="file://$PROJECT_DIR$/invoice/killbill-plugin-api-invoice.iml" filepath="$PROJECT_DIR$/invoice/killbill-plugin-api-invoice.iml" />
       <module fileurl="file://$PROJECT_DIR$/notification/killbill-plugin-api-notification.iml" filepath="$PROJECT_DIR$/notification/killbill-plugin-api-notification.iml" />
       <module fileurl="file://$PROJECT_DIR$/payment/killbill-plugin-api-payment.iml" filepath="$PROJECT_DIR$/payment/killbill-plugin-api-payment.iml" />
@@ -11,4 +13,3 @@
     </modules>
   </component>
 </project>
-
