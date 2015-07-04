@@ -37,6 +37,7 @@
         <module>routing</module>
         <module>invoice</module>
         <module>catalog</module>
+        <module>entitlement</module>
     </modules>
     <scm>
         <connection>scm:git:git://github.com/killbill/killbill-plugin-api.git</connection>
