@@ -52,6 +52,4 @@ public interface PaymentControlContext extends CallContext {
     public Currency getProcessedCurrency();
 
     public boolean isApiPayment();
-
-    public Iterable<PluginProperty> getPluginProperties();
 }

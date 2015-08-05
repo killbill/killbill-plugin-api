@@ -1,6 +1,7 @@
 /*
- * Copyright 2014 Groupon, Inc
- * Copyright 2014 The Billing Project, LLC
+ * Copyright 2010-2013 Ning, Inc.
+ * Copyright 2015 Groupon, Inc
+ * Copyright 2015 The Billing Project, LLC
  *
  * The Billing Project licenses this file to you under the Apache License, version 2.0
  * (the "License"); you may not use this file except in compliance with the
@@ -17,12 +18,11 @@
 
 package org.killbill.billing.control.plugin.api;
 
-import org.joda.time.DateTime;
+import org.killbill.billing.payment.api.PluginProperty;
 
-public interface OnFailurePaymentControlResult extends ControlResult {
-
+public interface ControlResult {
     /**
-     * @return the date the call should be retried or null if there should be no retry
+     * @return the new plugin properties that should be used for that attempt
      */
-    public DateTime getNextRetryDate();
+    public Iterable<PluginProperty> getAdjustedPluginProperties();
 }

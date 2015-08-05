@@ -18,11 +18,6 @@
 
 package org.killbill.billing.control.plugin.api;
 
-import org.killbill.billing.payment.api.PluginProperty;
+public interface OnSuccessPaymentControlResult extends ControlResult {
 
-public interface OnSuccessPaymentControlResult {
-    /**
-     * @return the new plugin properties that should be used for that attempt
-     */
-    public Iterable<PluginProperty> getAdjustedPluginProperties();
 }

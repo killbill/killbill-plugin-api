@@ -19,7 +19,7 @@ package org.killbill.billing.control.plugin.api;
 
 import org.killbill.billing.payment.api.PluginProperty;
 
-public interface PaymentcontrolPluginApi {
+public interface PaymentControlPluginApi {
 
     public PriorPaymentControlResult priorCall(PaymentControlContext context, Iterable<PluginProperty> properties) throws PaymentControlApiException;
 

@@ -23,7 +23,7 @@ import java.util.UUID;
 import org.killbill.billing.catalog.api.Currency;
 import org.killbill.billing.payment.api.PluginProperty;
 
-public interface PriorPaymentControlResult {
+public interface PriorPaymentControlResult extends ControlResult {
 
     /**
      * @return true if call should not proceed
@@ -44,9 +44,4 @@ public interface PriorPaymentControlResult {
      * @return the new payment method id that should be used for that attempt
      */
     public UUID getAdjustedPaymentMethodId();
-
-    /**
-     * @return the new plugin properties that should be used for that attempt
-     */
-    public Iterable<PluginProperty> getAdjustedPluginProperties();
 }
