@@ -1,3 +1,7 @@
+0.13
+    Rename routing module -> control module (and same for package)
+    Add getAdjustedPluginProperties() to OnSuccessPaymentControlResult and      OnFailurePaymentControlResult
+
 0.12
     Add new EntitlementPluginApi
 
