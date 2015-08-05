@@ -1,5 +1,4 @@
 /*
- * Copyright 2010-2013 Ning, Inc.
  * Copyright 2014 Groupon, Inc
  * Copyright 2014 The Billing Project, LLC
  *
@@ -16,8 +15,15 @@
  * under the License.
  */
 
-package org.killbill.billing.routing.plugin.api;
+package org.killbill.billing.control.plugin.api;
 
-public interface OnSuccessPaymentRoutingResult {
-    // TBD
+import org.killbill.billing.payment.api.PluginProperty;
+
+public interface PaymentcontrolPluginApi {
+
+    public PriorPaymentControlResult priorCall(PaymentControlContext context, Iterable<PluginProperty> properties) throws PaymentControlApiException;
+
+    public OnSuccessPaymentControlResult onSuccessCall(PaymentControlContext context, Iterable<PluginProperty> properties) throws PaymentControlApiException;
+
+    public OnFailurePaymentControlResult onFailureCall(PaymentControlContext context, Iterable<PluginProperty> properties) throws PaymentControlApiException;
 }

@@ -15,7 +15,7 @@
  * under the License.
  */
 
-package org.killbill.billing.routing.plugin.api;
+package org.killbill.billing.control.plugin.api;
 
 import java.math.BigDecimal;
 import java.util.UUID;
@@ -23,7 +23,7 @@ import java.util.UUID;
 import org.killbill.billing.catalog.api.Currency;
 import org.killbill.billing.payment.api.PluginProperty;
 
-public interface PriorPaymentRoutingResult {
+public interface PriorPaymentControlResult {
 
     /**
      * @return true if call should not proceed

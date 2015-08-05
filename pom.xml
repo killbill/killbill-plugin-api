@@ -34,7 +34,7 @@
         <module>notification</module>
         <module>payment</module>
         <module>currency</module>
-        <module>routing</module>
+        <module>control</module>
         <module>invoice</module>
         <module>catalog</module>
         <module>entitlement</module>

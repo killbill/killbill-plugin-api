@@ -16,22 +16,22 @@
  * under the License.
  */
 
-package org.killbill.billing.routing.plugin.api;
+package org.killbill.billing.control.plugin.api;
 
-public class PaymentRoutingApiException extends Exception {
+public class PaymentControlApiException extends Exception {
 
-    public PaymentRoutingApiException() {
+    public PaymentControlApiException() {
     }
 
-    public PaymentRoutingApiException(final String message) {
+    public PaymentControlApiException(final String message) {
         super(message);
     }
 
-    public PaymentRoutingApiException(final String message, final Throwable cause) {
+    public PaymentControlApiException(final String message, final Throwable cause) {
         super(message, cause);
     }
 
-    public PaymentRoutingApiException(final Throwable cause) {
+    public PaymentControlApiException(final Throwable cause) {
         super(cause);
     }
 }

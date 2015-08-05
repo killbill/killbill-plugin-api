@@ -22,19 +22,69 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="killbill-plugin-api-catalog" />
-        <module name="killbill-plugin-api-currency" />
-        <module name="killbill-plugin-api-entitlement" />
-        <module name="killbill-plugin-api-invoice" />
-        <module name="killbill-plugin-api-notification" />
-        <module name="killbill-plugin-api-payment" />
         <module name="killbill-plugin-api-retry" />
+      </profile>
+      <profile default="false" name="Annotation profile for killbill-plugin-api-catalog" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="killbill-plugin-api-catalog" />
+      </profile>
+      <profile default="false" name="Annotation profile for killbill-plugin-api-notification" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="killbill-plugin-api-notification" />
+      </profile>
+      <profile default="false" name="Annotation profile for killbill-plugin-api-routing" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
         <module name="killbill-plugin-api-routing" />
+      </profile>
+      <profile default="false" name="Annotation profile for killbill-plugin-api-entitlement" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="killbill-plugin-api-entitlement" />
+      </profile>
+      <profile default="false" name="Annotation profile for killbill-plugin-api-payment" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="killbill-plugin-api-payment" />
+      </profile>
+      <profile default="false" name="Annotation profile for killbill-plugin-api-currency" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="killbill-plugin-api-currency" />
+      </profile>
+      <profile default="false" name="Annotation profile for killbill-plugin-api-invoice" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="killbill-plugin-api-invoice" />
+      </profile>
+      <profile default="false" name="Annotation profile for killbill-plugin-api-control" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="killbill-plugin-api-control" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="killbill-plugin-api" target="1.6" />
       <module name="killbill-plugin-api-catalog" target="1.6" />
+      <module name="killbill-plugin-api-control" target="1.6" />
       <module name="killbill-plugin-api-currency" target="1.6" />
       <module name="killbill-plugin-api-entitlement" target="1.6" />
       <module name="killbill-plugin-api-invoice" target="1.6" />

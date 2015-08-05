@@ -15,14 +15,21 @@
  * under the License.
  */
 
-package org.killbill.billing.routing.plugin.api;
+package org.killbill.billing.control.plugin.api;
 
 import org.joda.time.DateTime;
+import org.killbill.billing.payment.api.PluginProperty;
 
-public interface OnFailurePaymentRoutingResult {
+public interface OnFailurePaymentControlResult {
 
     /**
      * @return the date the call should be retried or null if there should be no retry
      */
     public DateTime getNextRetryDate();
+
+    /**
+     * @return the new plugin properties that should be used for that attempt
+     */
+    public Iterable<PluginProperty> getAdjustedPluginProperties();
+
 }

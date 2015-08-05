@@ -24,8 +24,8 @@
         <version>0.13-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <artifactId>killbill-plugin-api-routing</artifactId>
-    <name>Kill Bill payment routing plugin apis</name>
+    <artifactId>killbill-plugin-api-control</artifactId>
+    <name>Kill Bill payment control plugin apis</name>
     <dependencies>
         <dependency>
             <groupId>joda-time</groupId>
