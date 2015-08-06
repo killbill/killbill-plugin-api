@@ -1,3 +1,6 @@
+0.14
+    Additional changes in plugin control api (renaming and API changes)
+
 0.13
     Rename routing module -> control module (and same for package)
     Add getAdjustedPluginProperties() to OnSuccessPaymentControlResult and      OnFailurePaymentControlResult
