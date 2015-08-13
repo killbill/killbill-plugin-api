@@ -39,7 +39,11 @@ public interface PaymentControlContext extends CallContext {
 
     public String getTransactionExternalKey();
 
+    public PaymentApiType getPaymentApiType();
+
     public TransactionType getTransactionType();
+
+    public HPPType getHPPType();
 
     public BigDecimal getAmount();
 
