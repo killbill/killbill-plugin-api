@@ -1,3 +1,6 @@
+0.15
+    Add new PaymentApiType and HPPType in the PaymentControlContext to support more than just pure payment transaction control plugin
+
 0.14
     Additional changes in plugin control api (renaming and API changes)
 
