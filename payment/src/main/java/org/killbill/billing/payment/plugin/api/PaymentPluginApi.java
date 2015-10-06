@@ -43,7 +43,7 @@ public interface PaymentPluginApi {
      * @param properties        custom properties for the gateway
      * @param context           call context
      * @return information about the authorization in the gateway
-     * @throws PaymentPluginApiException
+     * @throws PaymentPluginApiException If any unexpected error occurs
      */
     public PaymentTransactionInfoPlugin authorizePayment(UUID kbAccountId, UUID kbPaymentId, UUID kbTransactionId, UUID kbPaymentMethodId, BigDecimal amount, Currency currency, Iterable<PluginProperty> properties, CallContext context)
             throws PaymentPluginApiException;
@@ -60,7 +60,7 @@ public interface PaymentPluginApi {
      * @param properties        custom properties for the gateway
      * @param context           call context
      * @return information about the capture in the gateway
-     * @throws PaymentPluginApiException
+     * @throws PaymentPluginApiException If any unexpected error occurs
      */
     public PaymentTransactionInfoPlugin capturePayment(UUID kbAccountId, UUID kbPaymentId, UUID kbTransactionId, UUID kbPaymentMethodId, BigDecimal amount, Currency currency, Iterable<PluginProperty> properties, CallContext context)
             throws PaymentPluginApiException;
@@ -77,7 +77,7 @@ public interface PaymentPluginApi {
      * @param properties        custom properties for the gateway
      * @param context           call context
      * @return information about the payment in the gateway
-     * @throws PaymentPluginApiException
+     * @throws PaymentPluginApiException If any unexpected error occurs
      */
     public PaymentTransactionInfoPlugin purchasePayment(UUID kbAccountId, UUID kbPaymentId, UUID kbTransactionId, UUID kbPaymentMethodId, BigDecimal amount, Currency currency, Iterable<PluginProperty> properties, CallContext context)
             throws PaymentPluginApiException;
@@ -92,7 +92,7 @@ public interface PaymentPluginApi {
      * @param properties        custom properties for the gateway
      * @param context           call context
      * @return information about the capture in the gateway
-     * @throws PaymentPluginApiException
+     * @throws PaymentPluginApiException If any unexpected error occurs
      */
     public PaymentTransactionInfoPlugin voidPayment(UUID kbAccountId, UUID kbPaymentId, UUID kbTransactionId, UUID kbPaymentMethodId, Iterable<PluginProperty> properties, CallContext context)
             throws PaymentPluginApiException;
@@ -109,7 +109,7 @@ public interface PaymentPluginApi {
      * @param properties        custom properties for the gateway
      * @param context           call context
      * @return information about the credit in the gateway
-     * @throws PaymentPluginApiException
+     * @throws PaymentPluginApiException If any unexpected error occurs
      */
     public PaymentTransactionInfoPlugin creditPayment(UUID kbAccountId, UUID kbPaymentId, UUID kbTransactionId, UUID kbPaymentMethodId, BigDecimal amount, Currency currency, Iterable<PluginProperty> properties, CallContext context)
             throws PaymentPluginApiException;
@@ -126,7 +126,7 @@ public interface PaymentPluginApi {
      * @param properties        custom properties for the gateway
      * @param context           call context
      * @return information about the refund in the gateway
-     * @throws PaymentPluginApiException
+     * @throws PaymentPluginApiException If any unexpected error occurs
      */
     public PaymentTransactionInfoPlugin refundPayment(UUID kbAccountId, UUID kbPaymentId, UUID kbTransactionId, UUID kbPaymentMethodId, BigDecimal amount, Currency currency, Iterable<PluginProperty> properties, CallContext context)
             throws PaymentPluginApiException;
@@ -139,14 +139,14 @@ public interface PaymentPluginApi {
      * @param properties  custom properties for the gateway
      * @param context     call context
      * @return information about the payment in the gateway
-     * @throws PaymentPluginApiException
+     * @throws PaymentPluginApiException If any unexpected error occurs
      */
     public List<PaymentTransactionInfoPlugin> getPaymentInfo(UUID kbAccountId, UUID kbPaymentId, Iterable<PluginProperty> properties, TenantContext context)
             throws PaymentPluginApiException;
 
     /**
      * Search payments.
-     * <p/>
+     * <p>
      * The search is plugin specific, there is no constraint on how the searchKey should be interpreted.
      *
      * @param offset     the offset of the first result
@@ -154,14 +154,14 @@ public interface PaymentPluginApi {
      * @param properties custom properties for the gateway
      * @param context    call context
      * @return payments matching the search key
-     * @throws PaymentPluginApiException
+     * @throws PaymentPluginApiException If any unexpected error occurs
      */
     public Pagination<PaymentTransactionInfoPlugin> searchPayments(String searchKey, Long offset, Long limit, Iterable<PluginProperty> properties, TenantContext context)
             throws PaymentPluginApiException;
 
     /**
      * Add a payment method for a Killbill account in the gateway.
-     * <p/>
+     * <p>
      * Note: the payment method doesn't exist yet in Killbill when receiving the call in
      * the plugin (kbPaymentMethodId is a placeholder).
      *
@@ -170,7 +170,7 @@ public interface PaymentPluginApi {
      * @param setDefault         set it as the default payment method in the gateway
      * @param properties         custom properties for the gateway
      * @param context            call context
-     * @throws PaymentPluginApiException
+     * @throws PaymentPluginApiException If any unexpected error occurs
      */
     public void addPaymentMethod(UUID kbAccountId, UUID kbPaymentMethodId, PaymentMethodPlugin paymentMethodProps, boolean setDefault, Iterable<PluginProperty> properties, CallContext context)
             throws PaymentPluginApiException;
@@ -182,7 +182,7 @@ public interface PaymentPluginApi {
      * @param kbPaymentMethodId killbill payment method id
      * @param properties        custom properties for the gateway
      * @param context           call context
-     * @throws PaymentPluginApiException
+     * @throws PaymentPluginApiException If any unexpected error occurs
      */
     public void deletePaymentMethod(UUID kbAccountId, UUID kbPaymentMethodId, Iterable<PluginProperty> properties, CallContext context)
             throws PaymentPluginApiException;
@@ -195,7 +195,7 @@ public interface PaymentPluginApi {
      * @param properties        custom properties for the gateway
      * @param context           call context
      * @return PaymentMethodPlugin info for the payment method
-     * @throws PaymentPluginApiException
+     * @throws PaymentPluginApiException If any unexpected error occurs
      */
     public PaymentMethodPlugin getPaymentMethodDetail(UUID kbAccountId, UUID kbPaymentMethodId, Iterable<PluginProperty> properties, TenantContext context)
             throws PaymentPluginApiException;
@@ -207,7 +207,7 @@ public interface PaymentPluginApi {
      * @param kbPaymentMethodId killbill payment method id
      * @param properties        custom properties for the gateway
      * @param context           call context
-     * @throws PaymentPluginApiException
+     * @throws PaymentPluginApiException If any unexpected error occurs
      */
     public void setDefaultPaymentMethod(UUID kbAccountId, UUID kbPaymentMethodId, Iterable<PluginProperty> properties, CallContext context)
             throws PaymentPluginApiException;
@@ -215,7 +215,7 @@ public interface PaymentPluginApi {
     /**
      * This is used to see the view of paymentMethods kept by the plugin or the view of
      * existing payment method on the gateway.
-     * <p/>
+     * <p>
      * Sometimes payment methods have to be added directly to the gateway for PCI compliance issues
      * and so Kill Bill needs to refresh its state.
      *
@@ -224,14 +224,14 @@ public interface PaymentPluginApi {
      * @param properties         custom properties for the gateway
      * @param context            call context
      * @return all payment methods for that account
-     * @throws PaymentPluginApiException
+     * @throws PaymentPluginApiException If any unexpected error occurs
      */
     public List<PaymentMethodInfoPlugin> getPaymentMethods(UUID kbAccountId, boolean refreshFromGateway, Iterable<PluginProperty> properties, CallContext context)
             throws PaymentPluginApiException;
 
     /**
      * Search payment methods
-     * <p/>
+     * <p>
      * The search is plugin specific, there is no constraint on how the searchKey should be interpreted.
      *
      * @param offset     the offset of the first result
@@ -239,7 +239,7 @@ public interface PaymentPluginApi {
      * @param properties custom properties for the gateway
      * @param context    call context
      * @return payment methods matching the search key
-     * @throws PaymentPluginApiException
+     * @throws PaymentPluginApiException If any unexpected error occurs
      */
     public Pagination<PaymentMethodPlugin> searchPaymentMethods(String searchKey, Long offset, Long limit, Iterable<PluginProperty> properties, TenantContext context)
             throws PaymentPluginApiException;
@@ -251,7 +251,7 @@ public interface PaymentPluginApi {
      * @param paymentMethods the list of payment methods
      * @param properties     custom properties for the gateway
      * @param context        call context
-     * @throws PaymentPluginApiException
+     * @throws PaymentPluginApiException If any unexpected error occurs
      */
     public void resetPaymentMethods(UUID kbAccountId, List<PaymentMethodInfoPlugin> paymentMethods, Iterable<PluginProperty> properties, CallContext context)
             throws PaymentPluginApiException;
@@ -264,14 +264,14 @@ public interface PaymentPluginApi {
      * @param properties   custom properties for the gateway
      * @param context      call context
      * @return redirect form metadata
-     * @throws PaymentPluginApiException
+     * @throws PaymentPluginApiException If any unexpected error occurs
      */
     public HostedPaymentPageFormDescriptor buildFormDescriptor(UUID kbAccountId, Iterable<PluginProperty> customFields, Iterable<PluginProperty> properties, CallContext context)
             throws PaymentPluginApiException;
 
     /**
      * Process a notification from the gateway
-     * <p/>
+     * <p>
      * This potentially does more than just deserialize the payload. The plugin may have to acknowledge it
      * with the gateway.
      *
@@ -279,7 +279,7 @@ public interface PaymentPluginApi {
      * @param properties   custom properties for the gateway
      * @param context      call context
      * @return gateway notification object used to build the response to the gateway
-     * @throws PaymentPluginApiException
+     * @throws PaymentPluginApiException If any unexpected error occurs
      */
     public GatewayNotification processNotification(String notification, Iterable<PluginProperty> properties, CallContext context)
             throws PaymentPluginApiException;
