@@ -1,6 +1,6 @@
 /*
- * Copyright 2014 Groupon, Inc
- * Copyright 2014 The Billing Project, LLC
+ * Copyright 2014-2015 Groupon, Inc
+ * Copyright 2014-2015 The Billing Project, LLC
  *
  * The Billing Project licenses this file to you under the Apache License, version 2.0
  * (the "License"); you may not use this file except in compliance with the
@@ -30,8 +30,9 @@ public interface InvoicePluginApi {
      * Returns additional invoice items (setup fees, VAT tax, etc) to be added to the invoice upon creation
      *
      * @param invoice the invoice that is being created
+     * @param dryRun  if true, the invoice won't be persisted
      * @param context the call context
      * @return the list of additional invoice items to add to the new invoice
      */
-    List<InvoiceItem> getAdditionalInvoiceItems(Invoice invoice, Iterable<PluginProperty> properties, CallContext context);
+    List<InvoiceItem> getAdditionalInvoiceItems(Invoice invoice, boolean dryRun, Iterable<PluginProperty> properties, CallContext context);
 }
