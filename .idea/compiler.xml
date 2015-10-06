@@ -38,13 +38,6 @@
         <processorPath useClasspath="true" />
         <module name="killbill-plugin-api-notification" />
       </profile>
-      <profile default="false" name="Annotation profile for killbill-plugin-api-routing" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="true" />
-        <module name="killbill-plugin-api-routing" />
-      </profile>
       <profile default="false" name="Annotation profile for killbill-plugin-api-entitlement" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
