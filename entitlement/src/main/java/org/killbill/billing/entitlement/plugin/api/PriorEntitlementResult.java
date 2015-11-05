@@ -19,19 +19,16 @@ package org.killbill.billing.entitlement.plugin.api;
 import java.util.List;
 
 import org.joda.time.LocalDate;
-import org.killbill.billing.catalog.api.PlanPhasePriceOverride;
-import org.killbill.billing.catalog.api.PlanPhaseSpecifier;
+import org.killbill.billing.entitlement.api.EntitlementSpecifier;
 import org.killbill.billing.payment.api.PluginProperty;
 
 public interface PriorEntitlementResult {
 
     public boolean isAborted();
 
-    public PlanPhaseSpecifier getAdjustedPlanPhaseSpecifier();
-
     public LocalDate getAdjustedEffectiveDate();
 
-    public List<PlanPhasePriceOverride> getAdjustedPlanPhasePriceOverride();
+    public List<EntitlementSpecifier> getAdjustedEntitlementSpecifiers();
 
     public Iterable<PluginProperty> getAdjustedPluginProperties();
 }
