@@ -1,3 +1,6 @@
+0.17
+    Modify EntitlementContext for new combo entitlement api
+
 0.16
     Add dryRun to InvoicePluginApi#getAdditionalInvoiceItems signature
 
