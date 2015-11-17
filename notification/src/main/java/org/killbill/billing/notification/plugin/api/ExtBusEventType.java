@@ -23,6 +23,7 @@ package org.killbill.billing.notification.plugin.api;
 public enum ExtBusEventType {
     ACCOUNT_CREATION,
     ACCOUNT_CHANGE,
+    BROADCAST_SERVICE,
     SUBSCRIPTION_CREATION,
     SUBSCRIPTION_PHASE,
     SUBSCRIPTION_CHANGE,
