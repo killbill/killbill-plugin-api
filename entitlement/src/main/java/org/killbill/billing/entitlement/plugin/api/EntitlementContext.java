@@ -20,6 +20,7 @@ import java.util.List;
 import java.util.UUID;
 
 import org.joda.time.LocalDate;
+import org.killbill.billing.catalog.api.BillingActionPolicy;
 import org.killbill.billing.entitlement.api.EntitlementSpecifier;
 import org.killbill.billing.payment.api.PluginProperty;
 import org.killbill.billing.util.callcontext.CallContext;
@@ -38,7 +39,11 @@ public interface EntitlementContext extends CallContext {
 
     public List<EntitlementSpecifier> getEntitlementSpecifiers();
 
-    public LocalDate getEffectiveDate();
+    public LocalDate getEntitlementEffectiveDate();
+
+    public LocalDate getBillingEffectiveDate();
+
+    public BillingActionPolicy getBillingActionPolicy();
 
     public Iterable<PluginProperty> getPluginProperties();
 }
