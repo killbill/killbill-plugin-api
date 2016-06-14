@@ -21,11 +21,11 @@
     <parent>
         <artifactId>killbill-oss-parent</artifactId>
         <groupId>org.kill-bill.billing</groupId>
-        <version>0.91.seventeen-SNAPSHOT</version>
+        <version>0.96</version>
     </parent>
     <groupId>org.kill-bill.billing.plugin</groupId>
     <artifactId>killbill-plugin-api</artifactId>
-    <version>0.19.seventeen-SNAPSHOT</version>
+    <version>0.19-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Kill Bill plugin apis</name>
     <description>Kill Bill plugin apis</description>
