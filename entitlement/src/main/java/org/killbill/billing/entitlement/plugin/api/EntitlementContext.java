@@ -19,9 +19,8 @@ package org.killbill.billing.entitlement.plugin.api;
 import java.util.List;
 import java.util.UUID;
 
-import org.joda.time.LocalDate;
 import org.killbill.billing.catalog.api.BillingActionPolicy;
-import org.killbill.billing.entitlement.api.EntitlementSpecifier;
+import org.killbill.billing.entitlement.api.BaseEntitlementWithAddOnsSpecifier;
 import org.killbill.billing.payment.api.PluginProperty;
 import org.killbill.billing.util.callcontext.CallContext;
 
@@ -33,15 +32,7 @@ public interface EntitlementContext extends CallContext {
 
     public UUID getDestinationAccountId();
 
-    public UUID getBundleId();
-
-    public String getExternalKey();
-
-    public List<EntitlementSpecifier> getEntitlementSpecifiers();
-
-    public LocalDate getEntitlementEffectiveDate();
-
-    public LocalDate getBillingEffectiveDate();
+    public List<BaseEntitlementWithAddOnsSpecifier> getBaseEntitlementWithAddOnsSpecifiers();
 
     public BillingActionPolicy getBillingActionPolicy();
 

@@ -20,6 +20,7 @@ import java.util.List;
 
 import org.joda.time.LocalDate;
 import org.killbill.billing.catalog.api.BillingActionPolicy;
+import org.killbill.billing.entitlement.api.BaseEntitlementWithAddOnsSpecifier;
 import org.killbill.billing.entitlement.api.EntitlementSpecifier;
 import org.killbill.billing.payment.api.PluginProperty;
 
@@ -27,13 +28,9 @@ public interface PriorEntitlementResult {
 
     public boolean isAborted();
 
-    public LocalDate getAdjustedEntitlementEffectiveDate();
-
-    public LocalDate getAdjustedBillingEffectiveDate();
-
     public BillingActionPolicy getAdjustedBillingActionPolicy();
 
-    public List<EntitlementSpecifier> getAdjustedEntitlementSpecifiers();
+    public List<BaseEntitlementWithAddOnsSpecifier> getAdjustedBaseEntitlementWithAddOnsSpecifiers();
 
     public Iterable<PluginProperty> getAdjustedPluginProperties();
 }
