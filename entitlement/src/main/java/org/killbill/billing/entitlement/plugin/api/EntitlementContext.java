@@ -16,7 +16,6 @@
 
 package org.killbill.billing.entitlement.plugin.api;
 
-import java.util.List;
 import java.util.UUID;
 
 import org.killbill.billing.catalog.api.BillingActionPolicy;
@@ -32,7 +31,7 @@ public interface EntitlementContext extends CallContext {
 
     public UUID getDestinationAccountId();
 
-    public List<BaseEntitlementWithAddOnsSpecifier> getBaseEntitlementWithAddOnsSpecifiers();
+    public Iterable<BaseEntitlementWithAddOnsSpecifier> getBaseEntitlementWithAddOnsSpecifiers();
 
     public BillingActionPolicy getBillingActionPolicy();
 
