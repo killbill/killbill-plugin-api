@@ -29,13 +29,20 @@ public class SubscriptionMetadata {
     };
 
     private final ActionType actionType;
+    private final String bundleExternalKey;
 
     @JsonCreator
-    public SubscriptionMetadata(@JsonProperty("actionType") final ActionType actionType) {
+    public SubscriptionMetadata(@JsonProperty("actionType") final ActionType actionType,
+                                @JsonProperty("bundleExternalKey") final String bundleExternalKey) {
         this.actionType = actionType;
+        this.bundleExternalKey = bundleExternalKey;
     }
 
     public ActionType getActionType() {
         return actionType;
+    }
+
+    public String getBundleExternalKey() {
+        return bundleExternalKey;
     }
 }
