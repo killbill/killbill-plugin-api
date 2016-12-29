@@ -1,3 +1,6 @@
+0.23.1
+    Add bundleExternalKey in Subscription event metadata field
+
 0.23
     Add new Metadata field for Subscription events
 
