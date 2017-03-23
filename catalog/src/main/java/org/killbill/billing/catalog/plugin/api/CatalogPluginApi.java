@@ -17,10 +17,20 @@
 
 package org.killbill.billing.catalog.plugin.api;
 
+import org.joda.time.DateTime;
 import org.killbill.billing.payment.api.PluginProperty;
 import org.killbill.billing.util.callcontext.TenantContext;
 
 public interface CatalogPluginApi {
+
+    /**
+     *
+     * @param properties
+     * @param context
+     * @return
+     */
+    public DateTime getLatestCatalogVersion(Iterable<PluginProperty> properties, final TenantContext context);
+
 
     /**
      * Returns a plugin versioned catalog for this tenant
