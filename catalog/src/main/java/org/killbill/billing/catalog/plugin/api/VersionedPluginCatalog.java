@@ -30,12 +30,6 @@ public interface VersionedPluginCatalog {
 
     /**
      *
-     * @return the {@code BillingMode} for that catalog
-     */
-    public BillingMode getRecurringBillingMode();
-
-    /**
-     *
      * @return the {@code StandalonePluginCatalog} for each version
      */
     public Iterable<StandalonePluginCatalog> getStandalonePluginCatalogs();
