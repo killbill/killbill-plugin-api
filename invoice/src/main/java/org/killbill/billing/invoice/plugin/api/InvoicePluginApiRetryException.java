@@ -17,44 +17,7 @@
 
 package org.killbill.billing.invoice.plugin.api;
 
-import java.util.Arrays;
-import java.util.List;
+import org.killbill.billing.util.queue.QueueRetryException;
 
-import org.joda.time.Period;
-
-public class InvoicePluginApiRetryException extends RuntimeException {
-
-    public static final List<Period> DEFAULT_RETRY_SCHEDULE = Arrays.asList(Period.minutes(5),
-                                                                            Period.minutes(15),
-                                                                            Period.hours(1),
-                                                                            Period.hours(6),
-                                                                            Period.hours(24));
-
-    private final List<Period> retrySchedule;
-
-    public InvoicePluginApiRetryException() {
-        this(null, null);
-    }
-
-    public InvoicePluginApiRetryException(final Exception e) {
-        this(e, null);
-    }
-
-    public InvoicePluginApiRetryException(final List<Period> retrySchedule) {
-        this(null, retrySchedule);
-    }
-
-    public InvoicePluginApiRetryException(final Exception e, final List<Period> retrySchedule) {
-        super(e);
-        this.retrySchedule = retrySchedule != null ? retrySchedule : DEFAULT_RETRY_SCHEDULE;
-    }
-
-    public List<Period> getRetrySchedule() {
-        return retrySchedule;
-    }
-
-    @Override
-    public String toString() {
-        return String.format("%s (retrySchedule: %s)", super.toString(), retrySchedule);
-    }
+public class InvoicePluginApiRetryException extends QueueRetryException {
 }
