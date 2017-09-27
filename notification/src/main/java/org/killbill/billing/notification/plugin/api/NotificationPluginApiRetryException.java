@@ -15,27 +15,27 @@
  * under the License.
  */
 
-package org.killbill.billing.invoice.plugin.api;
+package org.killbill.billing.notification.plugin.api;
 
 import java.util.List;
 
 import org.joda.time.Period;
 import org.killbill.billing.util.queue.QueueRetryException;
 
-public class InvoicePluginApiRetryException extends QueueRetryException {
+public class NotificationPluginApiRetryException extends QueueRetryException {
 
-    public InvoicePluginApiRetryException() {
+    public NotificationPluginApiRetryException() {
     }
 
-    public InvoicePluginApiRetryException(final Exception e) {
+    public NotificationPluginApiRetryException(final Exception e) {
         super(e);
     }
 
-    public InvoicePluginApiRetryException(final List<Period> retrySchedule) {
+    public NotificationPluginApiRetryException(final List<Period> retrySchedule) {
         super(retrySchedule);
     }
 
-    public InvoicePluginApiRetryException(final Exception e, final List<Period> retrySchedule) {
+    public NotificationPluginApiRetryException(final Exception e, final List<Period> retrySchedule) {
         super(e, retrySchedule);
     }
 }
