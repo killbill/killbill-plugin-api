@@ -1,3 +1,13 @@
+0.24.1
+    Enhance CatalogPluginApi to allow Kill Bill catalog module to cache plugin catalog
+    invoice: introduce InvoicePluginApiRetryException
+    Remove VersionedPluginCatalog#getRecurringBillingMode as this should now be defined at the Plan level
+    notification: Add ExtBusEvent#getUserToken api
+    payment: Enhance payment control plugin to allow an overwrite of pluginName during addPaymentMethod operation
+    invoice: make InvoicePluginApiRetryException extend QueueRetryException
+    invoice: add missing constructors in InvoicePluginApiRetryException
+    notification: add NotificationPluginApiRetryException
+
 0.23.1
     Add bundleExternalKey in Subscription event metadata field
 
