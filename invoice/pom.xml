@@ -21,7 +21,7 @@
     <parent>
         <artifactId>killbill-plugin-api</artifactId>
         <groupId>org.kill-bill.billing.plugin</groupId>
-        <version>0.24.2</version>
+        <version>0.24.3-SNAPSHOT</version>
     </parent>
     <artifactId>killbill-plugin-api-invoice</artifactId>
     <name>Kill Bill invoice plugin apis</name>
