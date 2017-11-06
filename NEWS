@@ -1,3 +1,6 @@
+0.24.2
+    Rename OperationType.UNCANCEL_SUBSCRIPTION -> OperationType.UNDO_PENDING_SUBSCRIPTION_OPERATION
+
 0.24.1
     Enhance CatalogPluginApi to allow Kill Bill catalog module to cache plugin catalog
     invoice: introduce InvoicePluginApiRetryException
