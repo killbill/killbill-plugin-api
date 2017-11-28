@@ -1,3 +1,6 @@
+0.24.3
+    adding object to write invoice payment metadata in bus events
+
 0.24.2
     Rename OperationType.UNCANCEL_SUBSCRIPTION -> OperationType.UNDO_PENDING_SUBSCRIPTION_OPERATION
 
