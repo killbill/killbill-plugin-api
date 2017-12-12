@@ -37,6 +37,11 @@ public class InvoicePaymentMetadata {
     private String paymentCookieId;
     private Currency processedCurrency;
 
+    /**
+     * This is needed for object deserialization.
+     */
+    public InvoicePaymentMetadata() {}
+
     public InvoicePaymentMetadata(@JsonProperty("paymentId") final UUID paymentId,
                                   @JsonProperty("invoicePaymentType") final InvoicePaymentType invoicePaymentType,
                                   @JsonProperty("paymentDate") final DateTime paymentDate,
