@@ -1,3 +1,6 @@
+0.24.4
+    Add missing CTOR in InvoicePaymentMetadata
+
 0.24.3
     adding object to write invoice payment metadata in bus events
 
