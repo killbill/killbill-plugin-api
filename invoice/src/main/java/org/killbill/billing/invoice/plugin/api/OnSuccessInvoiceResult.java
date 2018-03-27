@@ -17,5 +17,5 @@
 
 package org.killbill.billing.invoice.plugin.api;
 
-public class OnSuccessInvoiceResult {
+public interface OnSuccessInvoiceResult {
 }
