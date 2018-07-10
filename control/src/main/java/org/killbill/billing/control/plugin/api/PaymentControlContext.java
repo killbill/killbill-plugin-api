@@ -51,6 +51,8 @@ public interface PaymentControlContext extends CallContext {
 
     public UUID getPaymentMethodId();
 
+    public String getPaymentPluginName();
+
     public BigDecimal getProcessedAmount();
 
     public Currency getProcessedCurrency();

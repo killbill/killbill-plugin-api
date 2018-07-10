@@ -54,4 +54,10 @@ public interface ExtBusEvent {
     public UUID getAccountId();
 
     public UUID getTenantId();
+
+    /**
+     *
+     * @return the user token coming from API request
+     */
+    UUID getUserToken();
 }

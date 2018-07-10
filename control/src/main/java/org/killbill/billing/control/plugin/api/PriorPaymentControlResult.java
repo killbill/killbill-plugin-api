@@ -44,4 +44,9 @@ public interface PriorPaymentControlResult extends ControlResult {
      * @return the new payment method id that should be used for that attempt
      */
     public UUID getAdjustedPaymentMethodId();
+
+    /**
+     * @return the new payment method plugin name (Only for ADD_PAYMENT_METHOD)
+     */
+    public String getAdjustedPluginName();
 }

@@ -1,7 +1,6 @@
 /*
- * Copyright 2010-2013 Ning, Inc.
- * Copyright 2015 Groupon, Inc
- * Copyright 2015 The Billing Project, LLC
+ * Copyright 2014-2018 Groupon, Inc
+ * Copyright 2014-2018 The Billing Project, LLC
  *
  * The Billing Project licenses this file to you under the Apache License, version 2.0
  * (the "License"); you may not use this file except in compliance with the
@@ -16,21 +15,7 @@
  * under the License.
  */
 
-package org.killbill.billing.catalog.plugin.api;
+package org.killbill.billing.invoice.plugin.api;
 
-import org.killbill.billing.catalog.api.BillingMode;
-
-public interface VersionedPluginCatalog {
-
-    /**
-     *
-     * @return the name of the catalog
-     */
-    public String getCatalogName();
-
-    /**
-     *
-     * @return the {@code StandalonePluginCatalog} for each version
-     */
-    public Iterable<StandalonePluginCatalog> getStandalonePluginCatalogs();
+public interface OnSuccessInvoiceResult {
 }

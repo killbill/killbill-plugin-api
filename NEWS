@@ -1,3 +1,34 @@
+0.24.8
+    Add new metadata object for InvoiceNotification
+
+0.24.7
+    Update killbill-oss-parent to 0.141.52
+
+0.24.6
+    invoice: make OnSuccessInvoiceResult an interface
+
+0.24.5
+    Invoice Plugin Api Enhancements
+
+0.24.4
+    Add missing CTOR in InvoicePaymentMetadata
+
+0.24.3
+    adding object to write invoice payment metadata in bus events
+
+0.24.2
+    Rename OperationType.UNCANCEL_SUBSCRIPTION -> OperationType.UNDO_PENDING_SUBSCRIPTION_OPERATION
+
+0.24.1
+    Enhance CatalogPluginApi to allow Kill Bill catalog module to cache plugin catalog
+    invoice: introduce InvoicePluginApiRetryException
+    Remove VersionedPluginCatalog#getRecurringBillingMode as this should now be defined at the Plan level
+    notification: Add ExtBusEvent#getUserToken api
+    payment: Enhance payment control plugin to allow an overwrite of pluginName during addPaymentMethod operation
+    invoice: make InvoicePluginApiRetryException extend QueueRetryException
+    invoice: add missing constructors in InvoicePluginApiRetryException
+    notification: add NotificationPluginApiRetryException
+
 0.23.1
     Add bundleExternalKey in Subscription event metadata field
 

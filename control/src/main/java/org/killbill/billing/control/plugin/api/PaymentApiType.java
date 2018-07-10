@@ -20,6 +20,7 @@ package org.killbill.billing.control.plugin.api;
 
 public enum PaymentApiType {
     PAYMENT_TRANSACTION,
+    PAYMENT_METHOD,
     HPP,
     NOTIFICATION
 }
