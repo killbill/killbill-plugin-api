@@ -20,6 +20,7 @@ package org.killbill.billing.usage.plugin.api;
 import java.util.List;
 
 import org.joda.time.LocalDate;
+import org.killbill.billing.usage.api.RawUsageRecord;
 import org.killbill.billing.util.callcontext.TenantContext;
 
 public interface UsagePluginApi {
