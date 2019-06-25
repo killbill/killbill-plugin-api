@@ -21,7 +21,7 @@
     <parent>
         <artifactId>killbill-plugin-api</artifactId>
         <groupId>org.kill-bill.billing.plugin</groupId>
-        <version>0.26.1</version>
+        <version>0.26.2-SNAPSHOT</version>
     </parent>
     <artifactId>killbill-plugin-api-entitlement</artifactId>
     <name>Kill Bill entitlement plugin apis</name>
