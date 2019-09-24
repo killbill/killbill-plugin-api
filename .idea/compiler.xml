@@ -16,26 +16,26 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="killbill-plugin-api-catalog" />
         <module name="killbill-plugin-api-control" />
         <module name="killbill-plugin-api-currency" />
-        <module name="killbill-plugin-api-entitlement" />
         <module name="killbill-plugin-api-invoice" />
         <module name="killbill-plugin-api-notification" />
-        <module name="killbill-plugin-api-payment" />
+        <module name="killbill-plugin-api-entitlement" />
+        <module name="killbill-plugin-api-catalog" />
         <module name="killbill-plugin-api-usage" />
+        <module name="killbill-plugin-api-payment" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="killbill-plugin-api" target="1.6" />
-      <module name="killbill-plugin-api-catalog" target="1.6" />
-      <module name="killbill-plugin-api-control" target="1.6" />
-      <module name="killbill-plugin-api-currency" target="1.6" />
-      <module name="killbill-plugin-api-entitlement" target="1.6" />
-      <module name="killbill-plugin-api-invoice" target="1.6" />
-      <module name="killbill-plugin-api-notification" target="1.6" />
-      <module name="killbill-plugin-api-payment" target="1.6" />
-      <module name="killbill-plugin-api-usage" target="1.6" />
+      <module name="killbill-plugin-api" target="1.8" />
+      <module name="killbill-plugin-api-catalog" target="1.8" />
+      <module name="killbill-plugin-api-control" target="1.8" />
+      <module name="killbill-plugin-api-currency" target="1.8" />
+      <module name="killbill-plugin-api-entitlement" target="1.8" />
+      <module name="killbill-plugin-api-invoice" target="1.8" />
+      <module name="killbill-plugin-api-notification" target="1.8" />
+      <module name="killbill-plugin-api-payment" target="1.8" />
+      <module name="killbill-plugin-api-usage" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
