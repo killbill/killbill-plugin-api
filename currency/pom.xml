@@ -22,7 +22,7 @@
     <parent>
         <artifactId>killbill-plugin-api</artifactId>
         <groupId>org.kill-bill.billing.plugin</groupId>
-        <version>0.26.3</version>
+        <version>0.26.4-SNAPSHOT</version>
     </parent>
     <artifactId>killbill-plugin-api-currency</artifactId>
     <name>Kill Bill currency conversion plugin apis</name>
