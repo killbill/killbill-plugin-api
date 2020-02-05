@@ -29,6 +29,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class InvoicePaymentMetadata {
 
     private UUID paymentId;
+    private UUID paymentAttemptId;
     private InvoicePaymentType invoicePaymentType;
     private DateTime paymentDate;
     private BigDecimal amount;
@@ -43,6 +44,7 @@ public class InvoicePaymentMetadata {
     public InvoicePaymentMetadata() {}
 
     public InvoicePaymentMetadata(@JsonProperty("paymentId") final UUID paymentId,
+                                  @JsonProperty("paymentAttemptId") final UUID paymentAttemptId,
                                   @JsonProperty("invoicePaymentType") final InvoicePaymentType invoicePaymentType,
                                   @JsonProperty("paymentDate") final DateTime paymentDate,
                                   @JsonProperty("amount") final BigDecimal amount,
@@ -51,6 +53,7 @@ public class InvoicePaymentMetadata {
                                   @JsonProperty("paymentCookieId") final String paymentCookieId,
                                   @JsonProperty("processedCurrency") final Currency processedCurrency) {
         this.paymentId = paymentId;
+        this.paymentAttemptId = paymentAttemptId;
         this.invoicePaymentType = invoicePaymentType;
         this.paymentDate = paymentDate;
         this.amount = amount;
@@ -62,6 +65,10 @@ public class InvoicePaymentMetadata {
 
     public UUID getPaymentId() {
         return paymentId;
+    }
+
+    public UUID getPaymentAttemptId() {
+        return paymentAttemptId;
     }
 
     public InvoicePaymentType getInvoicePaymentType() {
