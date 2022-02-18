@@ -49,4 +49,7 @@
         <system>Github</system>
         <url>https://github.com/killbill/killbill-plugin-api/issues</url>
     </issueManagement>
+    <properties>
+        <killbill-api.version>0.54.0-ec68485-SNAPSHOT</killbill-api.version>
+    </properties>
 </project>
