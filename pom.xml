@@ -21,7 +21,7 @@
     <parent>
         <groupId>org.kill-bill.billing</groupId>
         <artifactId>killbill-oss-parent</artifactId>
-        <version>0.145.3-21033be-SNAPSHOT</version>
+        <version>0.145.3-5fb32fe-SNAPSHOT</version>
     </parent>
     <groupId>org.kill-bill.billing.plugin</groupId>
     <artifactId>killbill-plugin-api</artifactId>
@@ -49,7 +49,4 @@
         <system>Github</system>
         <url>https://github.com/killbill/killbill-plugin-api/issues</url>
     </issueManagement>
-    <properties>
-        <killbill-api.version>0.54.0-f599b13-SNAPSHOT</killbill-api.version>
-    </properties>
 </project>
