@@ -1,6 +1,6 @@
 /*
- * Copyright 2014-2019 Groupon, Inc
- * Copyright 2014-2019 The Billing Project, LLC
+ * Copyright 2020-2022 Equinix, Inc
+ * Copyright 2014-2022 The Billing Project, LLC
  *
  * The Billing Project licenses this file to you under the Apache License, version 2.0
  * (the "License"); you may not use this file except in compliance with the
@@ -17,16 +17,14 @@
 
 package org.killbill.billing.usage.plugin.api;
 
-import java.util.List;
-import java.util.UUID;
-
 import org.joda.time.LocalDate;
-import org.killbill.billing.payment.api.PluginProperty;
-import org.killbill.billing.usage.api.RawUsageRecord;
+import org.killbill.billing.invoice.api.DryRunType;
+import org.killbill.billing.util.callcontext.TenantContext;
 
-public interface UsagePluginApi {
+public interface UsageContext extends TenantContext {
 
-    List<RawUsageRecord> getUsageForAccount(final LocalDate startDate, final LocalDate endDate, final UsageContext context, Iterable<PluginProperty> properties);
-
-    List<RawUsageRecord> getUsageForSubscription(final UUID subscriptionId, final LocalDate startDate, final LocalDate endDate, final UsageContext context, Iterable<PluginProperty> properties);
+    // Specify the type of dry-run operation or null otherwise
+    DryRunType getDryRunType();
+    // Specify targetDate Associated with the invoice run
+    LocalDate getInputTargetDate();
 }
