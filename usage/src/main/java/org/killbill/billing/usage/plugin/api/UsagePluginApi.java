@@ -26,7 +26,7 @@ import org.killbill.billing.usage.api.RawUsageRecord;
 
 public interface UsagePluginApi {
 
-    List<RawUsageRecord> getUsageForAccount(final LocalDate startDate, final LocalDate endDate, final UsageContext context, Iterable<PluginProperty> properties);
+    List<RawUsageRecord> getUsageForAccount(LocalDate startDate, LocalDate endDate, UsageContext context, Iterable<PluginProperty> properties);
 
-    List<RawUsageRecord> getUsageForSubscription(final UUID subscriptionId, final LocalDate startDate, final LocalDate endDate, final UsageContext context, Iterable<PluginProperty> properties);
+    List<RawUsageRecord> getUsageForSubscription(UUID subscriptionId, LocalDate startDate, LocalDate endDate, UsageContext context, Iterable<PluginProperty> properties);
 }
