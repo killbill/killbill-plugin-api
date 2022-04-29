@@ -18,9 +18,9 @@
 package org.killbill.billing.invoice.plugin.api;
 
 import java.util.List;
+import java.util.UUID;
 
-public interface InvoiceGroupingResult {
+public interface InvoiceGroup {
 
-    List<InvoiceGroup> getInvoiceGroups();
-
+    List<UUID> getInvoiceItemIds();
 }
