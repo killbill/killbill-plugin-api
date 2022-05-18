@@ -19,7 +19,7 @@ package org.killbill.billing.invoice.plugin.api;
 
 import org.joda.time.DateTime;
 
-public interface PriorInvoiceResult {
+public interface PriorInvoiceResult extends InvoiceResult {
 
     /**
      * @return true if call should not proceed
