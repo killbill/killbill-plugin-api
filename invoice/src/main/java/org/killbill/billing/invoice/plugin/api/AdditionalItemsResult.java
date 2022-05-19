@@ -19,8 +19,8 @@ package org.killbill.billing.invoice.plugin.api;
 
 import java.util.List;
 
-public interface InvoiceGroupingResult extends InvoiceResult {
+import org.killbill.billing.invoice.api.InvoiceItem;
 
-    List<InvoiceGroup> getInvoiceGroups();
-
+public interface AdditionalItemsResult extends InvoiceResult {
+    List<InvoiceItem> getAdditionalItems();
 }
