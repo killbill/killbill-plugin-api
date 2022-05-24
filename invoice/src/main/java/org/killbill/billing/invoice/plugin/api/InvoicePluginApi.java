@@ -36,7 +36,7 @@ public interface InvoicePluginApi {
      * @param context the call context
      * @return the list of additional invoice items to add to the new invoice
      */
-    List<InvoiceItem> getAdditionalInvoiceItems(Invoice invoice, boolean dryRun, Iterable<PluginProperty> properties, CallContext context);
+    AdditionalItemsResult getAdditionalInvoiceItems(Invoice invoice, boolean dryRun, Iterable<PluginProperty> properties, CallContext context);
 
     InvoiceGroupingResult getInvoiceGrouping(Invoice invoice, boolean dryRun, Iterable<PluginProperty> properties, CallContext context);
 

@@ -19,7 +19,7 @@ package org.killbill.billing.invoice.plugin.api;
 
 import java.util.List;
 
-public interface InvoiceGroupingResult {
+public interface InvoiceGroupingResult extends InvoiceResult {
 
     List<InvoiceGroup> getInvoiceGroups();
 
