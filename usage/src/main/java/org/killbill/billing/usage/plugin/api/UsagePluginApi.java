@@ -20,13 +20,13 @@ package org.killbill.billing.usage.plugin.api;
 import java.util.List;
 import java.util.UUID;
 
-import org.joda.time.LocalDate;
+import org.joda.time.DateTime;
 import org.killbill.billing.payment.api.PluginProperty;
 import org.killbill.billing.usage.api.RawUsageRecord;
 
 public interface UsagePluginApi {
 
-    List<RawUsageRecord> getUsageForAccount(LocalDate startDate, LocalDate endDate, UsageContext context, Iterable<PluginProperty> properties);
+    List<RawUsageRecord> getUsageForAccount(DateTime startDate, DateTime endDate, UsageContext context, Iterable<PluginProperty> properties);
 
-    List<RawUsageRecord> getUsageForSubscription(UUID subscriptionId, LocalDate startDate, LocalDate endDate, UsageContext context, Iterable<PluginProperty> properties);
+    List<RawUsageRecord> getUsageForSubscription(UUID subscriptionId, DateTime startDate, DateTime endDate, UsageContext context, Iterable<PluginProperty> properties);
 }
