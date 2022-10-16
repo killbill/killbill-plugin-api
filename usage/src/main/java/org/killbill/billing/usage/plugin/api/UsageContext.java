@@ -1,6 +1,6 @@
 /*
- * Copyright 2014-2018 Groupon, Inc
- * Copyright 2014-2018 The Billing Project, LLC
+ * Copyright 2020-2022 Equinix, Inc
+ * Copyright 2014-2022 The Billing Project, LLC
  *
  * The Billing Project licenses this file to you under the Apache License, version 2.0
  * (the "License"); you may not use this file except in compliance with the
@@ -15,19 +15,16 @@
  * under the License.
  */
 
-package org.killbill.billing.invoice.plugin.api;
+package org.killbill.billing.usage.plugin.api;
 
-import org.joda.time.DateTime;
+import org.joda.time.LocalDate;
+import org.killbill.billing.invoice.api.DryRunType;
+import org.killbill.billing.util.callcontext.TenantContext;
 
-public interface PriorInvoiceResult extends InvoiceResult {
+public interface UsageContext extends TenantContext {
 
-    /**
-     * @return true if call should not proceed
-     */
-    public boolean isAborted();
-
-    /**
-     * @return the date the invoice should be rescheduled or null if invoice generation should proceed
-     */
-    public DateTime getRescheduleDate();
+    // Specify the type of dry-run operation or null otherwise
+    DryRunType getDryRunType();
+    // Specify targetDate Associated with the invoice run
+    LocalDate getInputTargetDate();
 }
