@@ -17,34 +17,20 @@
 
 package org.killbill.billing.notification.plugin.api;
 
-import java.util.UUID;
-
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class TenantMetadata {
 
-    private final UUID id;
-    private final String key;
+	private final String key;
 
-    @JsonCreator
-    public TenantMetadata(@JsonProperty("id") final UUID id, @JsonProperty("key") final String key) {
-        this.id = id;
-        this.key = key;
-    }
+	@JsonCreator
+	public TenantMetadata(@JsonProperty("key") final String key) {
+		this.key = key;
+	}
 
-    @JsonCreator
-    public TenantMetadata(@JsonProperty("key") final String key) {
-        this.id = null;
-        this.key = key;
-    }
-
-    public UUID getId() {
-        return id;
-    }
-
-    public String getKey() {
-        return key;
-    }
+	public String getKey() {
+		return key;
+	}
 
 }
