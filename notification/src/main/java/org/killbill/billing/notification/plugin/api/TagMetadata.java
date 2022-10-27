@@ -17,45 +17,20 @@
 
 package org.killbill.billing.notification.plugin.api;
 
-import java.util.UUID;
-
-import org.killbill.billing.ObjectType;
-import org.killbill.billing.util.tag.TagDefinition;
-
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class TagMetadata {
 
-	private final UUID tagId;
-	private final UUID objectId;
-	private final ObjectType objectType;
-	private final TagDefinition tagDefinition;
+	private final String tagDefinitionName;
 
 	@JsonCreator
-	public TagMetadata(@JsonProperty("tagId") final UUID tagId, @JsonProperty("objectId") final UUID objectId,
-			@JsonProperty("objectType") final ObjectType objectType,
-			@JsonProperty("tagDefinition") final TagDefinition tagDefinition) {
-		this.tagId = tagId;
-		this.objectId = objectId;
-		this.objectType = objectType;
-		this.tagDefinition = tagDefinition;
+	public TagMetadata(@JsonProperty("tagDefinitionName") final String tagDefinitionName) {
+		this.tagDefinitionName = tagDefinitionName;
 	}
 
-	public UUID getTagId() {
-		return tagId;
-	}
-
-	public UUID getObjectId() {
-		return objectId;
-	}
-
-	public ObjectType getObjectType() {
-		return objectType;
-	}
-
-	public TagDefinition getTagDefinition() {
-		return tagDefinition;
+	public String getTagDefinitionName() {
+		return tagDefinitionName;
 	}
 
 }
