@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Groupon, Inc
+ * Copyright 2022 Equinix, Inc
  * Copyright 2022 The Billing Project, LLC
  *
  * The Billing Project licenses this file to you under the Apache License, version 2.0
@@ -20,12 +20,12 @@ package org.killbill.billing.notification.plugin.api;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class TenantMetadata {
+public class TenantConfigMetadata {
 
 	private final String key;
 
 	@JsonCreator
-	public TenantMetadata(@JsonProperty("key") final String key) {
+	public TenantConfigMetadata(@JsonProperty("key") final String key) {
 		this.key = key;
 	}
 

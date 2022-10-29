@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Groupon, Inc
+ * Copyright 2022 Equinix, Inc
  * Copyright 2022 The Billing Project, LLC
  *
  * The Billing Project licenses this file to you under the Apache License, version 2.0
