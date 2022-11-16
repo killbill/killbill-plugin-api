@@ -38,7 +38,7 @@ public interface InvoicePluginApi {
      */
     AdditionalItemsResult getAdditionalInvoiceItems(Invoice invoice, boolean dryRun, Iterable<PluginProperty> properties, InvoiceContext context);
 
-    InvoiceGroupingResult getInvoiceGrouping(Invoice invoice, boolean dryRun, Iterable<PluginProperty> properties, CallContext context);
+    InvoiceGroupingResult getInvoiceGrouping(Invoice invoice, boolean dryRun, Iterable<PluginProperty> properties, InvoiceContext context);
 
     OnSuccessInvoiceResult onSuccessCall(InvoiceContext context, Iterable<PluginProperty> properties);
 
