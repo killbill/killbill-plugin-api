@@ -19,13 +19,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>killbill-oss-parent</artifactId>
         <groupId>org.kill-bill.billing</groupId>
-        <version>0.143.45</version>
+        <artifactId>killbill-oss-parent</artifactId>
+        <version>0.145.3-2983ea8-SNAPSHOT</version>
     </parent>
     <groupId>org.kill-bill.billing.plugin</groupId>
     <artifactId>killbill-plugin-api</artifactId>
-    <version>0.26.5-SNAPSHOT</version>
+    <version>0.27.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Kill Bill plugin apis</name>
     <description>Kill Bill plugin apis</description>

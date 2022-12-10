@@ -16,13 +16,12 @@
   ~ License for the specific language governing permissions and limitations
   ~ under the License.
   -->
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>killbill-plugin-api</artifactId>
         <groupId>org.kill-bill.billing.plugin</groupId>
-        <version>0.26.5-SNAPSHOT</version>
+        <artifactId>killbill-plugin-api</artifactId>
+        <version>0.27.0-SNAPSHOT</version>
     </parent>
     <artifactId>killbill-plugin-api-currency</artifactId>
     <name>Kill Bill currency conversion plugin apis</name>

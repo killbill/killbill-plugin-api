@@ -26,7 +26,7 @@ import org.killbill.billing.util.callcontext.CallContext;
 
 public interface InvoicePluginApi {
 
-    public PriorInvoiceResult priorCall(InvoiceContext context, Iterable<PluginProperty> properties);
+    PriorInvoiceResult priorCall(InvoiceContext context, Iterable<PluginProperty> properties);
 
     /**
      * Returns additional invoice items (setup fees, VAT tax, etc) to be added to the invoice upon creation
@@ -36,9 +36,11 @@ public interface InvoicePluginApi {
      * @param context the call context
      * @return the list of additional invoice items to add to the new invoice
      */
-    List<InvoiceItem> getAdditionalInvoiceItems(Invoice invoice, boolean dryRun, Iterable<PluginProperty> properties, CallContext context);
+    AdditionalItemsResult getAdditionalInvoiceItems(Invoice invoice, boolean dryRun, Iterable<PluginProperty> properties, InvoiceContext context);
 
-    public OnSuccessInvoiceResult onSuccessCall(InvoiceContext context, Iterable<PluginProperty> properties);
+    InvoiceGroupingResult getInvoiceGrouping(Invoice invoice, boolean dryRun, Iterable<PluginProperty> properties, InvoiceContext context);
 
-    public OnFailureInvoiceResult onFailureCall(InvoiceContext context, Iterable<PluginProperty> properties);
+    OnSuccessInvoiceResult onSuccessCall(InvoiceContext context, Iterable<PluginProperty> properties);
+
+    OnFailureInvoiceResult onFailureCall(InvoiceContext context, Iterable<PluginProperty> properties);
 }
