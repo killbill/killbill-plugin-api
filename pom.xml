@@ -30,6 +30,7 @@
     <name>Kill Bill plugin apis</name>
     <description>Kill Bill plugin apis</description>
     <url>http://github.com/killbill/killbill-plugin-api</url>
+
     <modules>
         <module>notification</module>
         <module>payment</module>
@@ -50,4 +51,7 @@
         <system>Github</system>
         <url>https://github.com/killbill/killbill-plugin-api/issues</url>
     </issueManagement>
+    <properties>
+        <check.fail-spotbugs>true</check.fail-spotbugs>
+    </properties>
 </project>
