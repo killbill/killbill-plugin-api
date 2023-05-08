@@ -26,6 +26,9 @@
     </parent>
     <artifactId>killbill-plugin-api-notification</artifactId>
     <name>Kill Bill notification plugin apis</name>
+    <properties>
+        <check.spotbugs-exclude-filter-file>spotbugs-exclude.xml</check.spotbugs-exclude-filter-file>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
