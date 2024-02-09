@@ -26,5 +26,5 @@ import org.killbill.billing.invoice.api.formatters.InvoiceFormatter;
 
 public interface InvoiceFormatterFactory {
 
-    public InvoiceFormatter createInvoiceFormatter(final String defaultLocale, final String catalogBundlePath, final Invoice invoice, final Locale locale, final CurrencyConversionApi currencyConversionApi, ResourceBundle bundle, ResourceBundle defaultBundle);
+    InvoiceFormatter createInvoiceFormatter(final String defaultLocale, final String catalogBundlePath, final Invoice invoice, final Locale locale, final CurrencyConversionApi currencyConversionApi, ResourceBundle bundle, ResourceBundle defaultBundle);
 }
