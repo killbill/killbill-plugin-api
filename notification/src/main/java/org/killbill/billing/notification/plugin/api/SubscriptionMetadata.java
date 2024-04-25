@@ -28,10 +28,16 @@ public class SubscriptionMetadata {
         REQUESTED
     };
 
-    private final ActionType actionType;
-    private final String bundleExternalKey;
+    private ActionType actionType;
+    private String bundleExternalKey;
 
-    @JsonCreator
+    /**
+     * This is needed for object deserialization.
+     */
+    public SubscriptionMetadata() {
+
+    }
+
     public SubscriptionMetadata(@JsonProperty("actionType") final ActionType actionType,
                                 @JsonProperty("bundleExternalKey") final String bundleExternalKey) {
         this.actionType = actionType;
