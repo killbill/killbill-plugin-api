@@ -30,12 +30,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class PaymentMetadata {
 
-    private final UUID paymentTransactionId;
-    private final BigDecimal amount;
-    private final Currency currency;
-    private final TransactionStatus status;
-    private final TransactionType transactionType;
-    private final DateTime effectiveDate;
+    private UUID paymentTransactionId;
+    private BigDecimal amount;
+    private Currency currency;
+    private TransactionStatus status;
+    private TransactionType transactionType;
+    private DateTime effectiveDate;
+
+    public PaymentMetadata() {}
 
     @JsonCreator
     public PaymentMetadata(@JsonProperty("paymentTransactionId") final UUID paymentTransactionId,

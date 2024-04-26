@@ -28,8 +28,10 @@ public class SubscriptionMetadata {
         REQUESTED
     };
 
-    private final ActionType actionType;
-    private final String bundleExternalKey;
+    private ActionType actionType;
+    private String bundleExternalKey;
+
+    public SubscriptionMetadata() {}
 
     @JsonCreator
     public SubscriptionMetadata(@JsonProperty("actionType") final ActionType actionType,
