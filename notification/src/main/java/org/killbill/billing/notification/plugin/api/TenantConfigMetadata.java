@@ -22,7 +22,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class TenantConfigMetadata {
 
-	private final String key;
+	private String key;
+
+	public TenantConfigMetadata() {}
 
 	@JsonCreator
 	public TenantConfigMetadata(@JsonProperty("key") final String key) {

@@ -22,7 +22,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class TagMetadata {
 
-	private final String tagDefinitionName;
+	private String tagDefinitionName;
+
+	public TagMetadata() {}
 
 	@JsonCreator
 	public TagMetadata(@JsonProperty("tagDefinitionName") final String tagDefinitionName) {
