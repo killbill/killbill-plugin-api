@@ -34,9 +34,7 @@ public class SubscriptionMetadata {
     /**
      * This is needed for object deserialization.
      */
-    public SubscriptionMetadata() {
-
-    }
+    public SubscriptionMetadata() {}
 
     public SubscriptionMetadata(@JsonProperty("actionType") final ActionType actionType,
                                 @JsonProperty("bundleExternalKey") final String bundleExternalKey) {
