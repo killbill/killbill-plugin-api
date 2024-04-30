@@ -18,7 +18,6 @@
 
 package org.killbill.billing.notification.plugin.api;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class SubscriptionMetadata {
@@ -30,14 +29,19 @@ public class SubscriptionMetadata {
 
     private ActionType actionType;
     private String bundleExternalKey;
+    private boolean subscriptionChangeUndo;
 
+    /**
+     * This is needed for object deserialization.
+     */
     public SubscriptionMetadata() {}
 
-    @JsonCreator
     public SubscriptionMetadata(@JsonProperty("actionType") final ActionType actionType,
-                                @JsonProperty("bundleExternalKey") final String bundleExternalKey) {
+                                @JsonProperty("bundleExternalKey") final String bundleExternalKey,
+                                @JsonProperty("subscriptionChangeUndo") final boolean subscriptionChangeUndo) {
         this.actionType = actionType;
         this.bundleExternalKey = bundleExternalKey;
+        this.subscriptionChangeUndo = subscriptionChangeUndo;
     }
 
     public ActionType getActionType() {
@@ -46,5 +50,9 @@ public class SubscriptionMetadata {
 
     public String getBundleExternalKey() {
         return bundleExternalKey;
+    }
+
+    public boolean getSubscriptionChangeUndo() {
+        return subscriptionChangeUndo;
     }
 }
