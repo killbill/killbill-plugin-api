@@ -20,7 +20,7 @@
     <parent>
         <groupId>org.kill-bill.billing.plugin</groupId>
         <artifactId>killbill-plugin-api</artifactId>
-        <version>0.27.3-SNAPSHOT</version>
+        <version>0.27.3</version>
     </parent>
     <artifactId>killbill-plugin-api-entitlement</artifactId>
     <name>Kill Bill entitlement plugin apis</name>
