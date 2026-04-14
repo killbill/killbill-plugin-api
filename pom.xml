@@ -53,5 +53,18 @@
     </issueManagement>
     <properties>
         <check.fail-spotbugs>true</check.fail-spotbugs>
+        <!-- killbill-oss-parent still brings SpotBugs 4.7.2.1, whose ASM stack cannot parse
+             Java 21 class files. Keep this local override until the parent moves to a
+             Java-21-capable SpotBugs line. -->
+        <spotbugs-maven-plugin.version>4.9.8.3</spotbugs-maven-plugin.version>
     </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <version>${spotbugs-maven-plugin.version}</version>
+            </plugin>
+        </plugins>
+    </build>
 </project>
