@@ -53,6 +53,12 @@
     </issueManagement>
     <properties>
         <check.fail-spotbugs>true</check.fail-spotbugs>
+        <!-- killbill-oss-parent still brings extra-enforcer-rules 1.6.1, which rejects Java 21 as
+             an unknown target. Keep this local override until the parent is updated. -->
+        <extra-enforcer-rules.version>1.12.0</extra-enforcer-rules.version>
+        <!-- Align with killbill-commons 0.27.0 jakarta baseline -->
+        <killbill-commons.version>0.27.0</killbill-commons.version>
+        <project.build.targetJdk>21</project.build.targetJdk>
         <!-- killbill-oss-parent still brings SpotBugs 4.7.2.1, whose ASM stack cannot parse
              Java 21 class files. Keep this local override until the parent moves to a
              Java-21-capable SpotBugs line. -->
@@ -64,6 +70,17 @@
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-maven-plugin</artifactId>
                 <version>${spotbugs-maven-plugin.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>extra-enforcer-rules</artifactId>
+                        <version>${extra-enforcer-rules.version}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
