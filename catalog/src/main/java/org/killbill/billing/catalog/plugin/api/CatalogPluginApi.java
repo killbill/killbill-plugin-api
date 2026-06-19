@@ -17,26 +17,41 @@
 
 package org.killbill.billing.catalog.plugin.api;
 
+import java.util.Set;
+
 import org.joda.time.DateTime;
 import org.killbill.billing.payment.api.PluginProperty;
 import org.killbill.billing.util.callcontext.TenantContext;
 
 public interface CatalogPluginApi {
 
-    /**
-     *
-     * @param properties
-     * @param context
-     * @return
-     */
     public DateTime getLatestCatalogVersion(Iterable<PluginProperty> properties, final TenantContext context);
 
-
     /**
-     * Returns a plugin versioned catalog for this tenant
+     * Returns a plugin versioned catalog for this tenant containing all plans.
      *
-     * @param context
-     * @return
+     * @param properties plugin properties
+     * @param context    tenant context
+     * @return versioned catalog or null if this plugin does not manage the catalog for this tenant
      */
     public VersionedPluginCatalog getVersionedPluginCatalog(Iterable<PluginProperty> properties, final TenantContext context);
+
+    /**
+     * Returns a plugin versioned catalog restricted to the specified plan names.
+     * <p>
+     * Kill Bill calls this overload when it already knows which plans are required (e.g. during
+     * invoice generation) so that plugins managing large catalogs can return a shallow subset
+     * rather than the full catalog, reducing serialization and processing overhead.
+     * <p>
+     * Implementations that do not need this optimization may rely on the default, which
+     * delegates to {@link #getVersionedPluginCatalog(Iterable, TenantContext)}.
+     *
+     * @param planNames  the set of plan names Kill Bill needs; never null but may be empty
+     * @param properties plugin properties
+     * @param context    tenant context
+     * @return versioned catalog or null if this plugin does not manage the catalog for this tenant
+     */
+    default VersionedPluginCatalog getVersionedPluginCatalog(final Set<String> planNames, final Iterable<PluginProperty> properties, final TenantContext context) {
+        return getVersionedPluginCatalog(properties, context);
+    }
 }
