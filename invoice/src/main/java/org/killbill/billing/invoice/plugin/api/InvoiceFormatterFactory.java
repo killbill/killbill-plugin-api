@@ -23,8 +23,17 @@ import java.util.ResourceBundle;
 import org.killbill.billing.currency.api.CurrencyConversionApi;
 import org.killbill.billing.invoice.api.Invoice;
 import org.killbill.billing.invoice.api.formatters.InvoiceFormatter;
+import org.killbill.billing.util.callcontext.TenantContext;
 
 public interface InvoiceFormatterFactory {
+
+    /**
+     * perform {@link #createInvoiceFormatter(String, String, Invoice, Locale, CurrencyConversionApi, ResourceBundle, ResourceBundle, TenantContext)}
+     * with <code>tenantContext</code> parameter set to <code>null</code>.
+     */
+    default InvoiceFormatter createInvoiceFormatter(final String defaultLocale, final String catalogBundlePath, final Invoice invoice, final Locale locale, final CurrencyConversionApi currencyConversionApi, ResourceBundle bundle, ResourceBundle defaultBundle) {
+        return this.createInvoiceFormatter(defaultLocale, catalogBundlePath, invoice, locale, currencyConversionApi, bundle, defaultBundle, null);
+    }
 
     /**
      *
@@ -35,7 +44,8 @@ public interface InvoiceFormatterFactory {
      * @param currencyConversionApi API used for currency conversion
      * @param bundle ResourceBundle corresponding to the account locale and catalogBundlePath
      * @param defaultBundle ResourceBundle corresponding to the default locale and catalogBundlePath
+     * @param tenantContext an optional/nullable <code>TenantContext</code> instance
      * @return InvoiceFormatter corresponding to the formatted invoice
      */
-    InvoiceFormatter createInvoiceFormatter(final String defaultLocale, final String catalogBundlePath, final Invoice invoice, final Locale locale, final CurrencyConversionApi currencyConversionApi, ResourceBundle bundle, ResourceBundle defaultBundle);
+    InvoiceFormatter createInvoiceFormatter(final String defaultLocale, final String catalogBundlePath, final Invoice invoice, final Locale locale, final CurrencyConversionApi currencyConversionApi, ResourceBundle bundle, ResourceBundle defaultBundle, TenantContext tenantContext);
 }
